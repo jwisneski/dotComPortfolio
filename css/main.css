@@ -2,6 +2,8 @@ body{
     font-weight:300;
     font-family: -apple-system, 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-size:16px;
+    margin:0;
+    padding:0;
 }
 
 section{
@@ -15,4 +17,104 @@ section{
 
 h2{
   text-align:center;
+}
+
+.cta{
+    margin:auto;
+    display:flex;
+    justify-content: flex-end;
+    align-items:center;
+    width:22rem;
+    height:4.5rem;
+    margin-top:2rem;
+}.cta:hover{
+    cursor:pointer;
+}
+
+.cta p{
+    display:inline;
+    text-align:right;
+    font-size:1.8rem;
+    margin-right:1.5rem;
+}
+
+.cta div{
+    display:flex;
+    justify-content: space-around;
+    align-items:center;
+    width:3.2rem;
+    height:3.2rem;
+    border-radius:5rem;
+    color:white;
+    line-height:1.6rem;
+    float:right;
+}
+
+a{
+    text-decoration:none;
+}
+
+.contactColor{
+    background-color:#1779B8;
+}
+
+.contactText{
+    color:#1779B8;
+}
+
+.divider{
+    position:relative;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin:auto;
+    margin-top:2rem;
+    max-width:30rem;
+    height:1.4rem;
+    overflow:none;
+}
+
+.divider div{
+    height:50%;
+    width:50%;
+    border-bottom:1px solid grey;
+}
+
+.divider p{
+    min-width:15rem;
+    padding: .5rem 1rem 0 1rem;
+    text-align:center;
+    background-color:white;
+    color:grey;
+}
+
+.copyEmailContainer{
+    position:relative;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    margin:auto;
+    margin-top:2rem;
+}
+
+.copyEmail{
+    color:#1779B8;
+    text-align:center;
+    resize:none;
+    border:none;
+    font-size:1.8rem;
+    font-weight:200;
+}.copyEmail:hover{
+    cursor:pointer;
+}
+
+.emailHint{
+    margin-top:0;
+    font-size:1.4rem;
+    color:grey;
+    opacity:100;
+}
+
+.hidden{
+    opacity:0;
 }
