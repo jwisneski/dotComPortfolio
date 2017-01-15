@@ -8,7 +8,7 @@ $(document).ready(function () {
     var browser = navigator.userAgent;
 
     //Customize Copy Message
-    if(browser.includes('Firefox')){
+    if(navigator.userAgent.search("Firefox")){
         $('.container').addClass('hidden');
         $('nav').addClass('hidden');
 
