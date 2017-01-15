@@ -12,7 +12,7 @@ $(document).ready(function () {
         $('.container').addClass('hidden');
         $('nav').addClass('hidden');
 
-        $('errorMessage').removeClass('hidden');
+        $('.errorMessage').removeClass('hidden');
     }
 
     var contactOpen = false;
