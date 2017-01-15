@@ -8,12 +8,12 @@ $(document).ready(function () {
     var browser = navigator.userAgent;
 
     //Customize Copy Message
-    if(navigator.userAgent.search("Firefox")){
+    /*if(navigator.userAgent.search("Firefox")){
         $('.container').addClass('hidden');
         $('nav').addClass('hidden');
 
         $('.errorMessage').removeClass('hidden');
-    }
+    }*/
 
     var contactOpen = false;
     var home;
