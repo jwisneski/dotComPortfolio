@@ -923,6 +923,7 @@ section + section{
 }
 
 h1.fire{
+    margin-top:50px;
     width:100%;
     text-align:center;
 }
