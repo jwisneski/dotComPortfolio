@@ -541,7 +541,7 @@ section + section{
     z-index:-1;
 }
 
-.macbook{
+.imDeviceContainer .macbook{
     width:40%;
     height:62%;
 
@@ -600,7 +600,7 @@ section + section{
 
 
 
-div.phone{
+.imDeviceContainer .phone{
     width:30%;
     height:60%;
 
