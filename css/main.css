@@ -1,126 +1,258 @@
+/* Global Colors */
+
+/*dark grey #454545*/
+/*medium grey #9b9b9b*/
+/*light grey #ebebeb*/
+/*green #2ba306*/
+/*red #d0011b*/
+
 *{
+    /* reset all the margins and padding
+    I'll do it myself, thank you */
     margin:0;
     padding:0;
 
-    -ms-transition:all .5s ease;
-    -moz-transition:all .5s ease;
-    -webkit-transition:all .5s ease;
-    -o-transition:all .5s ease;
-    transition:all .5s ease;
+    /* also adds a very fuctional transition
+    that can be overriden later*/
+    -ms-transition:all .33s ease;
+    -moz-transition:all .33s ease;
+    -webkit-transition:all .33s ease;
+    -o-transition:all .33s ease;
+    transition:all .33s ease;
 }
 
-body{
-    font-weight:300;
+.slowTransition{
+    /* like here,
+     offsets transitions to be a little more subtle */
+    -ms-transition:all .7s ease;
+    -moz-transition:all .7s ease;
+    -webkit-transition:all .7s ease;
+    -o-transition:all .7s ease;
+    transition:all .7s ease;
+}
+
+html{
+    /* I really like the San Francisco font by Apple,
+    mostly because I need a good "J" for my name*/
+    font-weight:200; /*thin*/
     font-family: -apple-system, 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    font-size:20px;
-}
 
-h1{
-    font-size:40px;
-    font-weight:100;
-}
-
-h4{
-    text-align:center;
-    font-size:20px;
-    font-weight:400;
-}
-
-.title{
-    margin-left:5px;
-    margin-bottom:50px;
-    text-align:left;
-}
-
-.container{
-    width:100%;
-    height:100%;
-
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-}
-
-.cta{
-    margin:auto;
-    display:flex;
-    justify-content: center;
-    align-items:center;
-    width:300px;
-    height:30px;
-    margin-top:10px;
-}.cta:hover{
-    cursor:pointer;
-}
-
-.cta p{
-    display:inline;
-    text-align:right;
-    margin-right:15px;
-}
-
-.cta div{
-    display:flex;
-    justify-content: space-around;
-    align-items:center;
-
-    width:40px;
-    height:40px;
-    border-radius:100%;
-
-    color:white;
-    font-size:20px;
+    /* min 16px for body, 14px for flows
+    line-heights are rounded up to 5px intervals
+    for easier math*/
+    font-size:18px;
     line-height:30px;
 
-    float:right;
+    color:#000;
 }
 
 a{
-    text-decoration:none;
+    /* removes the 1990's affordances */
+    text-decoration: inherit;
+    color:inherit;
+
+    /* adds the 2010's affordances */
+    padding:20px 20px;
+
+    /* used to make links expand from the center */
+    line-height:40px;
+    vertical-align: middle;
 }
 
-.contactColor{
-    background-color:#1779B8;
+li{
+    margin-bottom:10px;
+
+    cursor:default;
+
 }
 
-.contactText{
-    /*color:#1779B8;*/
+h1{
+    font-size:50px;
+    line-height:50px;
+    font-weight:300;
+    margin-bottom:20px;
+
+    cursor:default;
+
 }
 
+h2{
+    font-size:30px;
+    line-height:35px;
+    font-weight:300;
+    margin-bottom:20px;
 
-/* Divider Line*/
-.divider{
-    position:relative;
+    cursor:default;
 
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-    margin:auto;
-    margin-top:10px;
-    max-width:300px;
-
-    height:15px;
-    overflow:none;
 }
 
-.divider div{ /*Actual border*/
-    height:50%;
-    width:50%;
+h3{
+    font-size:20px;
+    font-weight:600;
+    float:left;
 
-    border-bottom:1px solid grey;
+    cursor:default;
+
 }
 
-.divider p{ /*White space covers divider line*/
-    min-width:180px;
-    padding: 5px 10px 0 10px;
+span{
+    font-size:18px;
+    float:right;
+    text-align:right;
+
+    cursor:default;
+}
+
+p{
+    /* adds a readable width and some spacing below paragraphs */
+    max-width:600px;
+    margin-bottom:20px;
+    cursor:default;
+}
+
+button{
+    /* creates consistent buttons across the entire experience*/
+    width:200px;
+    height:50px;
+
     background-color:white;
 
-    text-align:center;
-    color:grey;
+    font-size:20px;
+    line-height:50px;
+    font-weight:200;
+
+    border:1px solid black;
+    cursor:pointer;
 }
 
+button:hover{
+    background-color:orange;
+    border-color:white;
+    color:white;
+}
+
+button:focus, input:focus, textarea:focus{
+    /*removes the default blue outline on clicked state*/
+    outline:none;
+}
+
+label{
+    margin-top:15px;
+}
+
+input{
+    font-size:16px;
+    line-height:30px;
+
+    width:200px;
+
+    padding:5px;
+}
+
+nav{
+    /* hides the background but gives some contrast
+    for the :hover state*/
+    background-color:rgba(230, 230, 230, 0.6);
+
+    position:fixed;
+    top:0;
+    left:0;
+
+    width:100%;
+    height:50px;
+
+    padding-bottom:10px;
+}
+
+nav:hover{
+    /* adds a nice subtle effect for the links */
+    background-color:rgba(255, 255, 255, 0.9);
+}
+
+nav ul{
+    width:100%;
+    height:100%;
+
+    margin:auto;
+
+    /* lets links expand naturally from center*/
+    text-align:center;
+
+    /* I do like flexboxes plus this works well for
+    changing the orientation on mobile*/
+    display:flex;
+    flex-direction:row;
+    align-items:flex-end;
+    justify-content: center;
+}
+
+nav li{
+    /* get rid of bullets
+    add a width to spread out links*/
+    list-style:none;
+    width:20%;
+    font-size:20px;
+    margin-bottom:0;
+}
+
+nav a:hover{
+    /* feedback */
+    color:orange;
+}
+
+nav li:first-of-type{
+    /* my name */
+    min-width:300px;
+}
+
+.active{
+    /* Changes the size of the active link
+    and removes excess padding on large link*/
+    font-size:50px;
+    padding:0;
+}
+
+.clickable:hover{
+    cursor:pointer;
+}
+
+section{
+    display:flex;
+    flex-direction:row;
+    justify-content: space-around;
+    align-items: center;
+
+    box-sizing:border-box;
+}
+
+section + section{
+    margin-bottom:20px;
+}
+
+/* Projects container */
+.container{
+    width:100%;
+    flex-wrap:wrap;
+    overflow-x:hidden;
+}
+
+.blurEffect{
+    filter:blur(15px);
+}
+
+.whiteOverlay{
+    align-items: center;
+    justify-content: center;
+
+    width:100%;
+    height:100%;
+
+    position:fixed;
+    top:0;
+    left:0;
+
+    background-color:rgba(225, 225, 225, .2);
+}
 
 /* Email copy function*/
 .copyEmailContainer{
@@ -156,16 +288,628 @@ a{
     opacity:100;
 }
 
-/* Hides outlines */
-input:focus,
-select:focus,
-textarea:focus,
-button:focus {
-    outline: none;
+.contactForm{
+    flex-direction:column;
+    align-items: center;
+    justify-content: flex-start;
+
+    width:30%;
+    height:50%;
+
+    background-color:white;
+}
+
+.contactForm button{
+    margin-top:20px;
+}
+
+/* about section */
+.about{
+    width:100%;
+    padding-top:60px;
+    min-height:490px;
+}
+
+.about section{
+    width:40%;
+
+    flex-direction:column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.about section:first-of-type{
+    justify-content: center;
+    align-items: flex-start;
+    width:60%;
+}
+
+.about p{
+    max-width:400;
+}
+
+.contact{
+    width:100%;
+    height:150px;
+
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.sfProject + .contact{
+    /* adding a little extra space after the projects section */
+    margin-top:50px;
+}
+
+.resume{
+    width:100%;
+    height:auto;
+
+    margin-top:80px;
+
+    justify-content: center;
+}
+
+.resume a{
+    padding:0;
+    line-height:30px;
+}
+
+.resume-highlights{
+    width:60%;
+
+    flex-direction:column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.resume div{
+    width:75%;
+}
+
+.resume .resumeDownload{
+    width:100%;
+    height:100;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.container li{
+    list-style-position: outside;
+    margin-left:1em;
+}
+
+.resume div:nth-of-type(3n){
+    margin-bottom:10px;
+}
+
+.resume-callouts{
+    width:35%;
+
+    flex-direction:column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.projects{
+    width:100%;
+    height:auto;
+
+    flex-wrap:wrap;
+
+    margin-top:60px;
+}
+
+.projects p{
+    max-width:400px;
+}
+
+/* Kohl's Project */
+.kohlsProject{
+    width:100%;
+    height:350px;
+
+    flex-basis: 100%;
+
+    position:relative;
+
+    border-width:0 0 1px 0;
+    border-style:solid;
+}
+
+.kohlsProject .projects-bagPage{
+    width:60%;
+    height:85%;
+
+    border-width:0 1px 0 1px;
+    border-style:solid;
+    border-color:#454545; /*dark grey*/
+
+    position:absolute;
+    bottom:0;
+    left:20%;
+
+    overflow-y:hidden;
+}
+
+.kohlsProject .projects-navBar{
+    width:100%;
+    height:40px;
+
+    flex-basis:40%;
+
+    background-color:#454545; /*dark grey*/
+
+    position: absolute;
+    top:0;
+}
+
+.kohlsProject .projects-checkout{
+    height:100%;
+    width:100px;
+
+    margin-left:80%;
+
+    background-color:#2BA306; /*kohl's Green*/
+}
+
+.kohlsProject .projects-bag{
+    width:100%;
+    height:130px;
+
+    display:flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    background-color:#ebebeb; /*light grey*/
+
+    /* lines up with the bottom of the nav bar*/
+    position:absolute;
+    top:-90px;
+}
+
+.kohlsProject .projects-bagProducts{
+    width:70%;
+    height:90%;
+    margin-left:5%;
+    background-color:white;
+
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.projects-bag.bagOpen{
+    top:40px;
+}
+
+.product{
+    width:17%;
+    height:85%;
+    background-color:white;
+    border:1px solid #9b9b9b;
+}
+
+.product:nth-of-type(2){
+    background-color:#9b9b9b;
+}
+
+.kohlsProject .projects-kohlsSummary{
+    width:100%;
+    height:100px;
+
+    position:absolute;
+    bottom:0;
+
+    display:flex;
+    flex-direction:row;
+    justify-content: space-around;
+    align-items: center;
 }
 
 
-/* Global */
+/* Image Matters Project */
+.imProject{
+    width:60%;
+    height:450px;
+
+    border-bottom:1px solid #454545; /*dark grey*/
+    border-right:1px solid #454545; /*dark grey*/
+
+    flex-direction:column;
+    justify-content:flex-start;
+
+    position:relative;
+}
+
+.imProject p, .imProject button{
+    margin-top:20px;
+}
+
+
+.imDeviceContainer{
+    width:100%;
+    height:350px;
+
+    position:absolute;
+    bottom:0;
+
+    display:flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    z-index:-1;
+}
+
+.macbook{
+    width:40%;
+    height:62%;
+
+    min-width:320px;
+}
+
+.macbook .bezel{
+    width:93%;
+    height:90%;
+
+    margin-left:3.5%;
+
+    background-color:#5B5B5B;
+
+    border-radius:10px 10px 0 0;
+    border:2px solid #D8D8D8;
+    border-bottom:none;
+
+    display:flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.macbook .screen{
+    width:95%;
+    height:93%;
+
+    background-color:white;
+
+    overflow:hidden;
+}
+
+.macbook .case{
+    width:100%;
+    height:3.5%;
+
+    top:90%;
+
+    background-color:#D8D8D8;
+
+    border-radius:0 0 3px 3px;
+
+    display:flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.macbook .opener{
+    width:15%;
+    height:50%;
+
+    border-radius:0 0 50px 50px;
+
+    background-color:#5B5B5B;
+}
+
+
+
+div.phone{
+    width:30%;
+    height:60%;
+
+    min-width:200px;
+
+    overflow:hidden;
+
+    display:flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.phoneBezel{
+    width:80%;
+    height:150%;
+
+    background-color:#454545;
+
+    border-radius:20px;
+
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.phoneScreen{
+    width:90%;
+    height:60%;
+
+    margin-top:20%;
+
+    background-color:white;
+
+    overflow:hidden;
+}
+
+.imThumbHeader{
+    width:100%;
+    height:20%;
+
+    margin-top:10%;
+
+    background-color:#68E9CA;
+}
+
+.imThumbContent{
+    width:90%;
+    height:60%;
+
+    margin-top:10%;
+    margin-left:5%;
+
+    background-color:#ebebeb;
+}
+
+
+/* Salesforce Project */
+.sfProject{
+    width:40%;
+    height:450px;
+
+    border-bottom:1px solid #454545; /*dark grey*/
+
+    display:flex;
+    flex-direction:row;
+    justify-content:space-between;
+    align-items: center;
+
+    position:relative;
+}
+
+.projects-sfSummary{
+    /* left side of the Salesforce demo */
+    /* the CTA is just above the fold on a 13" Macbook pro */
+    height:60%;
+    width:50%;
+
+    padding:20px;
+}
+
+.sfProject .projects-timelineContainer{
+    /* right side of the Salesforce demo */
+    width:50%;
+    height:100%;
+
+    border-left:1px solid #9b9b9b; /*light grey*/
+    position:relative;
+}
+
+.sfProject .projects-timeline{
+    width:4px;
+    height:100%;
+
+    background-color:#9b9b9b; /*medium grey*/
+
+    position:absolute;
+    right:20px;
+    top:0;
+}
+
+.outgoing .message, .outgoing .messageDot{
+    background-color:#9b9b9b; /*medium grey*/
+}
+
+.incoming .message, .incoming .messageDot{
+    background-color:#2ba306; /*green*/
+}
+
+.error .message, .error .messageDot{
+    background-color:#d0011b; /*red*/
+}
+
+.projects-messageGroup{
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items:flex-end;
+
+    position:absolute;
+
+    right:13px;
+    top:10%;
+}
+
+.message{
+    width:120px;
+    height:20px;
+
+    margin-bottom:5px;
+    margin-right:25px;
+
+    border-radius:20px;
+}
+
+.messageDot{
+    width:20px;
+    height:20px;
+
+    border-radius:100%;
+}
+
+.process{
+    flex-direction: column;
+    position:relative;
+}
+
+.processBack{
+    position:absolute;
+
+    left:0;
+    top:0;
+
+    height:100%;
+    width:80px;
+
+    background-color:rgba(200, 200, 200, .8);
+
+    font-size:60px;
+    color:rgba(120, 120, 120, .8);
+    text-align: center;
+
+    display:flex;
+    justify-content: center;
+    align-items:center;
+}
+
+.processForward{
+    position:absolute;
+
+    right:0;
+    top:0;
+
+    height:100%;
+    width:80px;
+
+    background-color:rgba(200, 200, 200, .8);
+
+    font-size:60px;
+    color:rgba(120, 120, 120, .8);
+    text-align: center;
+
+    display:flex;
+    justify-content: center;
+    align-items:center;
+}
+
+.process01{
+    background:url('https://jwisneski.github.io/portfolio/images/process01.jpg');
+}
+
+.process02{
+    background:url('https://jwisneski.github.io/portfolio/images/process02.jpg');
+}
+
+.process03{
+    background:url('https://jwisneski.github.io/portfolio/images/process03.jpg');
+}
+
+.process04{
+    background:url('https://jwisneski.github.io/portfolio/images/process04.jpg');
+}
+
+.process05{
+    background:url('https://jwisneski.github.io/portfolio/images/process05.jpg');
+}
+
+
+.processPhoto{
+    width:70%;
+    height:350px;
+    background-position:center;
+    background-repeat:no-repeat;
+    background-size:contain;
+}
+
+.sliderMask{
+    /* the thing containing the 500% div can't be a flexbox*/
+    display:block;
+    width:100%;
+    height:300px;
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+.sliderContainer{
+    width:500%;
+    height:100%;
+
+    justify-content: :center;
+}
+
+.processText{
+    width:20%;
+    height:100%;
+    margin:0;
+
+    display:flex;
+    flex-direction:row;
+    align-items: flex-start;
+    justify-content: space-around;
+}
+
+.leftHalfProcess, .rightHalfProcess{
+    width:35%;
+    height:100%;
+
+    flex-direction:column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
 .hidden{
-    opacity:0;
+    display:none;
+}
+
+.footer{
+    width:80%;
+    height:50px;
+}
+
+.footer i{
+    font-size:24px;
+}
+
+.footer div:nth-of-type(1){
+    width:30%;
+    text-align:left;
+}
+
+.footer div:nth-of-type(2){
+    width:30%;
+    text-align:center;
+}
+
+.footer div:nth-of-type(3){
+    width:30%;
+    text-align:right;
+}
+
+/*extra styles *****************************************/
+.messageGroupB{
+    top:30%;
+}
+
+.messageGroupB .message{
+    width:150px;
+}
+
+.messageGroupC{
+    top:60%;
+}
+
+.messageGroupC .message{
+    width:80px;
+}
+
+.fullpage{
+    width:100%;
+    height:100%;
+}
+
+.photoOfMe{
+    width:90%;
+    height:70%;
+    background:url('https://jwisneski.github.io/portfolio/images/me.jpg');
+    background-size:100% auto;
+    background-position:top center;
+    background-repeat:no-repeat;
 }
