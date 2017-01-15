@@ -1,0 +1,1015 @@
+h4{
+    font-size:80px;
+    font-weight:200;
+    line-height:90px;
+
+    margin-top:-50px;
+
+    cursor:default;
+}
+
+b{
+    font-weight:600;
+}
+
+/* add extra space to the top of each section to give them a little room to breath */
+.projectHero, .leftPhoto, .rightPhoto, .projectWhy, .twoTall, .leftRightPhoto, .flowContainer, .multiSection{
+    margin-top:60px;
+}
+
+.projectTitleRow + .projectHero{
+    margin-top:0;
+}
+
+/* Project title */
+.projectTitleRow{
+    flex-direction:row;
+    width:95%;
+    justify-content: space-between;
+    padding-top:60px;
+}
+
+.projectProfile{
+    flex-direction:column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.companyProfile{
+    flex-direction:column;
+    align-items: flex-end;
+
+    max-width:450px;
+    text-align: right;
+}
+
+.logo{
+    width:100%;
+    height:80px;
+
+    background-size:contain;
+    background-repeat:no-repeat;
+    background-position:bottom right;
+}
+
+.kohlsLogo{
+    background-image:url('https://jwisneski.github.io/portfolio/images/kohls.jpg');
+    margin-right:-25px;
+}
+
+.salesforceLogo{
+    background-image:url('https://jwisneski.github.io/portfolio/images/smc.jpg');
+    margin-right:-45px;
+}
+
+.imageMattersLogo{
+    background-size:auto 35px;
+    background-position:center right;
+    background-image:url('https://jwisneski.github.io/portfolio/images/imagematters.png')
+}
+
+/* Hero section */
+.projectHero{
+    width:95%;
+    height:250px;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+.tallHero{
+    height:400px;
+}
+
+.photo{
+    max-width:650px;
+    width:60%;
+
+    max-height:500px;
+    height:50%;
+
+    background-image:cover;
+    background-repeat:no-repeat;
+    overflow:hidden;
+}
+
+.text{
+    max-width:500px;
+}
+
+/* Why section */
+.projectWhy{
+    text-align:center;
+    margin-top:20px;
+}
+
+.IMWhy{
+    text-align:left;
+}
+
+/* Left photo section */
+.leftPhoto{
+    width:95%;
+    justify-content: space-between;
+}
+
+/* Right photo section */
+.rightPhoto{
+    width:95%;
+    justify-content: space-between;
+}
+
+/* Two Tall analytics section */
+.twoTall > h2{
+    flex-basis:100%;
+}
+
+.twoTall > div{
+    width:30%;
+    margin-top:20px;
+}
+
+.twoTall{
+    width:95%;
+    flex-wrap:wrap;
+    text-align:center;
+}
+
+.threeWide{
+    flex-wrap:wrap;
+    align-items: center;
+}
+
+.threeWide p{
+    margin-top:50px;
+    width:30%;
+    text-align:center;
+    min-width:320px;
+}
+
+.analytic h1{
+    margin-bottom:0
+}
+
+.analytic p{
+    font-size:20px;
+    font-weight:600;
+}
+
+/* Left and Right photos section */
+.leftRightPhoto{
+    width:95%;
+}
+
+.leftRightPhoto > div:first-of-type{
+    width:35%;
+}
+
+.leftRightPhoto > div:nth-of-type(2){
+    width:40%;
+}
+
+.leftRightPhoto > div:nth-of-type(3){
+    width:20%;
+}
+
+
+/* watch gallery */
+.galleryContainer{
+    flex-direction:column;
+    justify-content: flex-start;
+    align-items: center;
+
+    width:100%;
+    height:750px;
+
+    padding-top:100px;
+
+    background-color:#2480E6; /*appleBlue*/
+    color:white;
+}
+
+.watchGallery{
+    width:100%;
+    height:500px;
+}
+
+.watchGallery .watch{
+    width:20%;
+    height:80%;
+    position:relative;
+
+    overflow:hidden;
+}
+
+.band{
+    position:absolute;
+    height:50%;
+    width:60%;
+
+    left:20%;
+
+    border-radius:30px;
+}
+
+.watchBezel{
+    height:55%;
+    width:75%;
+
+    position:absolute;
+    top:22.5%;
+    left:12.5%;
+
+    border-radius:30px;
+
+    display:flex;
+    justify-content: center;
+    align-items: center;
+
+    flex-shrink:0;
+}
+
+.watchScreen{
+    width:80%;
+    height:80%;
+
+    display:flex;
+    flex-direction:row;
+    flex-wrap:wrap;
+    justify-content:center;
+    align-content:flex-start;
+
+    background-size:100% 100%;
+    background-position:center
+}
+
+.upperBand{
+    top:0;
+}
+
+.lowerBand{
+    bottom:0;
+}
+
+/* flows*/
+.flowContainer{
+    flex-direction:column;
+    justify-content: flex-start;
+    align-items: center;
+
+    width:95%;
+}
+
+.flowContainer h3{
+    width:100%;
+    text-align:left;
+}
+
+.flow{
+    width:100%;
+    margin-bottom:50px;
+
+    background-position:left center;
+    background-size:contain;
+    background-repeat:no-repeat;
+}
+
+/* Voice of the customer section */
+.photoTitle{
+    flex-direction:column;
+    align-items:flex-start;
+
+    width:95%;
+
+    margin-bottom:0;
+}
+
+/* multiRow (IM Styleguide */
+.multiSection{
+    flex-direction:column;
+    align-items: center;
+    width:100%;
+}
+
+.multiSection section{
+    width:100%;
+    flex-direction:row;
+
+    margin-bottom:60px;
+}
+
+.nextPreviousProjects{
+    width:100%;
+    height:200px;
+
+    background-color:#ebebeb;
+
+    position:fixed;
+    left:0;
+    bottom:-200px;
+
+    margin-bottom:0;
+}
+
+.nextPreviousProjectsShown{
+    bottom:0;
+}
+
+.nextPreviousProjects h3{
+    margin-top:50px;
+}
+
+.nextPreviousProjects > section{
+    width:30%;
+    height:100%;
+
+    justify-content: center;
+    align-items: center;
+
+    margin-bottom:0;
+}
+
+.nextPreviousProjects a{
+    width:100%;
+    height:100%;
+
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.nextPreviousProjects p{
+    cursor:pointer;
+}
+
+.nextPreviousProjects div{
+    width:70%;
+    height:60%;
+
+    background-color:white;
+}
+
+.nextPreviousProjects .copyEmailContainer, .nextPreviousProjects textarea{
+    background-color:transparent;
+}
+
+.salesforceThumb{
+    background-image:url('https://jwisneski.github.io/portfolio/images/salesforceThumb.jpg');
+    background-size:contain;
+    background-position:center right;
+    background-repeat:no-repeat;
+}
+
+.kohlsThumb{
+    background-image:url('https://jwisneski.github.io/portfolio/images/kohlsThumb.jpg');
+    background-size:contain;
+    background-position:center;
+    background-repeat:no-repeat;
+}
+
+.imageMattersThumb{
+    background-image:url('https://jwisneski.github.io/portfolio/images/imageMattersThumb.jpg');
+    background-size:contain;
+    background-position:bottom center;
+    background-repeat:no-repeat;
+}
+
+.phoneAndTablet{
+    max-width:650px;
+    width:60%;
+
+    max-height:500px;
+    height:80%;
+
+    background-image:cover;
+    background-repeat:no-repeat;
+    overflow:hidden;
+}
+
+/* extra styles */
+.leftPhoto .photo, .leftRightPhoto .photo{
+    height:60%;
+}
+
+.macbook, .desktop{
+    max-width:700px;
+    width:700px;
+    height:200px;
+}
+
+
+/* Colors for Interactive or just color ********************************************/
+.appleBlack, .appleBlack >div.mobileHomeBtn, .appleBlack > div.mobileSpeaker{
+    background-color:#4A4A4A;
+    border-color:#979797;
+}
+
+.appleBlue, .appleBlue > div.mobileHomeBtn, .appleBlue > div.mobileSpeaker{
+    background-color:#2480E6;
+    border-color:#2E68AD;
+}
+
+.appleGreen, .appleGreen > div.mobileHomeBtn, .appleGreen > div.mobileSpeaker{
+    background-color:#66B60E;
+    border-color:#417505;
+}
+
+.appleRed, .appleRed > div.mobileHomeBtn, .appleRed > div.mobileSpeaker{
+    background-color:#EE5C80;
+    border-color:#AE4753;
+}
+
+.appleYellow, .appleYellow > div.mobileHomeBtn, .appleYellow > div.mobileSpeaker{
+    background-color:#EADF5B;
+    border-color:#D9CA1E;
+}
+
+.appleOrange, .appleOrange >div.mobileHomeBtn, .appleOrange > div.mobileSpeaker{
+    background-color:#F5A623;
+    border-color:#BC7706;
+}
+
+.appleWhite, .appleWhite > div.mobileHomeBtn, .appleWhite > div.mobileSpeaker{
+    background-color:#E5E5E5;
+    border-color:#979797;
+}
+
+.mobileWire.appleBlue, .mobileWire.appleGreen, .mobileWire.appleRed, .mobileWire.appleYellow, .mobileWire.appleOrange, .mobileWire.appleWhite, .mobileWire.appleBlack{
+    cursor:pointer;
+}
+
+
+/* kohls photos*/
+.currentBag{
+    height:100%;
+    background-image:url('https://jwisneski.github.io/portfolio/images/persistentBag.jpg');
+    background-size:contain;
+    background-repeat: no-repeat;
+}
+
+.kohlsScope{
+    background-image:url('https://jwisneski.github.io/portfolio/images/kohlsScope.jpg');
+    background-size:100% auto;
+}
+
+.beforeBag{
+    background-image:url('https://jwisneski.github.io/portfolio/images/BVS.jpg');
+    background-position:center;
+    background-size:contain;
+}
+
+.preFlow{
+    background-image:url('https://jwisneski.github.io/portfolio/images/preFlow.jpg');
+    min-height:250px;
+}
+
+.flowBefore{
+    background-image:url('https://jwisneski.github.io/portfolio/images/flowBefore.jpg');
+    height:400px;
+}
+
+.flowAfter{
+    background-image:url('https://jwisneski.github.io/portfolio/images/flowAfter.jpg');
+    height:400px;
+}
+
+.flipState{
+    height:80% !important;
+    max-height:700px !important;
+
+    background-image:url('https://jwisneski.github.io/portfolio/images/flipState.jpg');
+    background-size:contain;
+    background-position:top center;
+}
+
+.cardV0{
+    background-image:url('https://jwisneski.github.io/portfolio/images/cardV0.jpg')
+}
+
+.cardV1{
+    background-image:url('https://jwisneski.github.io/portfolio/images/cardV1.jpg');
+}
+
+.cardV2{
+    background-image:url('https://jwisneski.github.io/portfolio/images/cardV2.jpg');
+}
+
+.cardV3{
+    background-image:url('https://jwisneski.github.io/portfolio/images/cardV3.jpg');
+}
+
+.cardV4{
+    background-image:url('https://jwisneski.github.io/portfolio/images/cardV4.jpg');
+}
+
+.arrowLeft, .arrowUp, .arrowRight{
+    position:relative;
+}
+
+.arrowLeft::before{
+    content:'';
+    width:80px;
+    height:2px;
+    background-color:black;
+
+    position:absolute;
+    top:50%;
+    left:-100px;
+}
+
+.arrowLeft::after{
+    content:'';
+    width:12px;
+    height:12px;
+    border-radius:100%;
+    background-color:black;
+
+    position:absolute;
+    top:calc(50% - 5px);
+    left:-104px;
+}
+
+.arrowRight::before{
+    content:'';
+    width:80px;
+    height:2px;
+    background-color:black;
+
+    position:absolute;
+    top:50%;
+    right:-80px;
+}
+
+.arrowRight::after{
+    content:'';
+    width:12px;
+    height:12px;
+    border-radius:100%;
+    background-color:black;
+
+    position:absolute;
+    top:calc(50% - 5px);
+    right:-90px;
+}
+
+.arrowUp::before{
+    content:'';
+    width:2px;
+    height:80px;
+    background-color:black;
+
+    position:absolute;
+    top:-30px;
+    left:calc(50% - 1px);
+}
+
+.arrowUp::after{
+    content:'';
+    width:12px;
+    height:12px;
+    border-radius:100%;
+    background-color:black;
+
+    position:absolute;
+    top:-40px;
+    left:calc(50% - 6px);
+}
+
+.sketches{
+    /* sketch images take up the entire screen*/
+    width:100%;
+    height:500px;
+
+    background-image:url('https://jwisneski.github.io/portfolio/images/kohlsSketches01.jpg');
+    background-size:contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.sketches.secondSketch{
+    /* and the second sketch image has a different URL */
+    background-image:url('https://jwisneski.github.io/portfolio/images/kohlsSketches02.jpg');
+}
+
+.sketchExplainer{
+    flex-direction:column;
+}
+
+.kohlsTesting{
+    background-image:url('https://jwisneski.github.io/portfolio/images/kohlsTesting.jpg');
+    background-size:contain;
+    background-repeat: no-repeat;
+}
+
+/* Image Matters photos*/
+.macbookHero{
+    height:400px;
+}
+
+.macbookHero > .macbook{
+    height:425px;
+}
+
+.imHomeB{
+    background-image:url('https://jwisneski.github.io/portfolio/images/imHome.jpg');
+    background-size:100% auto;
+    background-position:bottom center;
+}
+
+.careersPhoto{
+    background-image:url('https://jwisneski.github.io/portfolio/images/careers.jpg');
+    background-size:100% auto;
+    background-repeat:no-repeat;
+}
+
+.interiorPhoto{
+    background-image:url('https://jwisneski.github.io/portfolio/images/interiorPageB.jpg');
+    background-size:100% auto;
+    background-repeat:no-repeat;
+}
+
+.imHomepage{
+    background-image:url('https://jwisneski.github.io/portfolio/images/imHome.jpg');
+    background-size:100% auto;
+    background-repeat:no-repeat;
+}
+
+.fullWidthPhoto{
+    width:100%;
+    height:auto;
+    min-height:300px;
+}
+
+.imHomepageBefore{
+    background-image:url('https://jwisneski.github.io/portfolio/images/imHomeBefore.jpg');
+    background-size:100% auto;
+    background-repeat:no-repeat;
+}
+
+.careersBefore{
+    background-image:url('https://jwisneski.github.io/portfolio/images/careersBefore.jpg');
+    background-size:100% auto;
+    background-repeat:no-repeat;
+}
+
+.productsBefore{
+    background-image:url('https://jwisneski.github.io/portfolio/images/productsBefore.jpg');
+    background-size:100% auto;
+    background-repeat:no-repeat;
+}
+
+.imMobile{
+    background-image:url('https://jwisneski.github.io/portfolio/images/imMobile.jpg');
+    background-size:100% auto;
+    background-repeat:no-repeat;
+}
+
+.imTablet{
+    background-image:url('https://jwisneski.github.io/portfolio/images/imTablet.jpg');
+    background-size:100% auto;
+    background-repeat:no-repeat;
+}
+
+.imInteriorBefore{
+    background-image:url('https://jwisneski.github.io/portfolio/images/imInteriorBefore.jpg');
+    background-size:100% auto;
+    background-repeat:no-repeat;
+}
+
+.imStyleguide{
+    background-image:url('https://jwisneski.github.io/portfolio/images/imStyleguide.jpg');
+    background-size:95% auto;
+    background-position:center;
+    background-repeat:no-repeat;
+}
+
+/*Salesforce Photos*/
+.salesforceScreen{
+    background-image:url('https://jwisneski.github.io/portfolio/images/salesforceScreen.jpg');
+    background-size:contain;
+    background-position:center;
+    background-repeat:no-repeat;
+}
+
+.smsExample{
+    background-image:url('https://jwisneski.github.io/portfolio/images/smsExample.jpg');
+    background-size:100%;
+    background-position:top center;
+    background-repeat:no-repeat;
+}
+
+.salesforceSketches{
+    background-image:url('https://jwisneski.github.io/portfolio/images/salesforceSketches.jpg');
+    background-size:contain;
+    background-position:top center;
+    background-repeat:no-repeat;
+}
+
+.followUnboxed{
+    background-image:url('https://jwisneski.github.io/portfolio/images/followUnboxed.jpg');
+    background-size:100%;
+    background-position:top center;
+    background-repeat:no-repeat;
+}
+
+.followInteracted{
+    background-image:url('https://jwisneski.github.io/portfolio/images/followInteracted.jpg');
+    background-size:100%;
+    background-position:top center;
+    background-repeat:no-repeat;
+}
+
+.followAbandoned{
+    background-image:url('https://jwisneski.github.io/portfolio/images/followAbandoned.jpg');
+    background-size:100%;
+    background-position:top center;
+    background-repeat:no-repeat;
+}
+
+.outboundMsg{
+    max-width:80%;
+
+    background-image:url('https://jwisneski.github.io/portfolio/images/outboundMsg.jpg');
+    background-size:contain;
+    background-position:center;
+    background-repeat:no-repeat;
+}
+
+.responseKeyword{
+    background-image:url('https://jwisneski.github.io/portfolio/images/responseKeyword.jpg');
+    background-size:100%;
+    background-position:top center;
+    background-repeat:no-repeat;
+}
+
+.responseSecondKeyword{
+    background-image:url('https://jwisneski.github.io/portfolio/images/responseSecondKeyword.jpg');
+    background-size:100%;
+    background-position:center;
+    background-repeat:no-repeat;
+}
+
+.responseMsg{
+    background-image:url('https://jwisneski.github.io/portfolio/images/responseMsg.jpg');
+    background-size:contain;
+    background-position:center;
+    background-repeat:no-repeat;
+}
+
+.salesforceFuture{
+    width:30%;
+    height: 100%;
+    background-image:url('https://jwisneski.github.io/portfolio/images/salesforceFuture.jpg');
+    background-size:contain;
+    background-position:center;
+    background-repeat:no-repeat;
+}
+
+.salesforceFutureWire .phone{
+    height:60%;
+}
+
+.salesforceFutureWire .phoneBezel{
+    margin-top:0;
+}
+
+.salesforceFuturePhone{
+    background-image:url('https://jwisneski.github.io/portfolio/images/salesforceFutureWire.jpg');
+    background-size:100% auto;
+    background-position:top center;
+    background-repeat:no-repeat;
+}
+
+.timelineSection{
+    align-items: flex-start;
+}
+
+.timelineExplainer{
+    min-height:1000px;
+    background-image:url('https://jwisneski.github.io/portfolio/images/timelineExplainer.jpg');
+    background-size:auto 100%;
+    background-position:top center;
+    background-repeat:no-repeat;
+}
+
+/*********** Devices *****************/
+.tvGallery{
+    margin-bottom:100px;
+}
+
+.tvAngled{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    height:650px;
+    overflow-y:hidden;
+}
+
+.tvPerspective{
+    height:600px;
+    margin-top:-400px;
+    -webkit-perspective:400px;
+    perspective:400px;
+
+   -webkit-perspective-origin:center bottom;
+    perspective-origin: center bottom;
+
+    transform:scale(.95);
+}
+
+.tv{
+    width:1000px;
+    height:500px;
+    background:url('https://jwisneski.github.io/portfolio/images/imageMattersTop.jpg');
+    background-size:100% 100%;
+    background-position:center 50px;
+    border:20px solid #4A4A4A;
+    box-sizing:border-box;
+}
+
+.tvPerspective > section.tv{
+    transform:rotateX(-30deg);
+}
+
+.desktop{
+    height:400px;
+
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    min-width:650px;
+}
+
+.desktopBezel{
+    width:90%;
+    height:90%;
+
+    background-color:#5B5B5B;
+
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.desktopScreen{
+    width:95%;
+    height:93%;
+    background-color:white;
+}
+
+.desktopUpperStand{
+    width:20%;
+    height:6%;
+
+    background-color:#454545;
+}
+
+.desktopLowerStand{
+    width:40%;
+    height:1%;
+
+    background-color:#5B5B5B;
+}
+
+.macbook{
+    width:100%;
+    height:62%;
+}
+
+.macbook .bezel{
+    width:93%;
+    height:90%;
+
+    margin-left:3.5%;
+
+    background-color:#5B5B5B;
+
+    border-radius:20px 20px 0 0;
+    border:2px solid #D8D8D8;
+    border-bottom:none;
+
+    display:flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.macbook .screen{
+    width:95%;
+    height:93%;
+
+    background-color:white;
+}
+
+.macbook .case{
+    width:100%;
+    height:3.5%;
+
+    top:90%;
+
+    background-color:#D8D8D8;
+
+    border-radius:0 0 10px 10px;
+
+    display:flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.macbook .opener{
+    width:15%;
+    height:50%;
+
+    border-radius:0 0 50px 50px;
+
+    background-color:#5B5B5B;
+}
+
+div.phone{
+    width:30%;
+    height:50%;
+
+    min-width:320px;
+
+    overflow:hidden;
+
+    display:flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.phoneAndTablet div.phone{
+    /* Image Matters specific*/
+    height:90%;
+}
+
+.tablet{
+    width:40%;
+    height:90%;
+
+    min-width:250px;
+}
+
+.phoneAndTablet .tablet{
+
+}
+
+.phoneBezel, .tabletBezel{
+    width:80%;
+    height:150%;
+
+    background-color:#454545;
+
+    border-radius:40px;
+
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.phoneAndTablet .phoneBezel{
+    /* Image Matters specific*/
+    width:75%;
+    height:100%;
+
+    border-radius:30px;
+
+    margin-top:0;
+}
+
+.tabletBezel{
+    width:100%;
+    height:80%;
+
+    border-radius:20px;
+}
+
+.phoneScreen{
+    width:90%;
+    height:60%;
+
+    margin-top:20%;
+
+    background-color:white;
+}
+
+.phoneAndTablet .phoneScreen{
+    /* Image Matters specific*/
+    width:90%;
+    height:75%;
+
+    margin-top:20%;
+}
+
+.tabletScreen{
+    width:90%;
+    height:75%;
+
+    margin-top:15%;
+
+    background-color:white;
+}
