@@ -3,21 +3,18 @@ function swapClasses(newClass){
     $(newClass).addClass('active');
 }
 
-/* on mouse move to target area slide up next/previous project
-
-if(!home){
-
-}
-
-https://api.jquery.com/mousemove/
-
-var x = event.clientX;     // Get the horizontal coordinate
-var y = event.clientY;     // Get the vertical coordinate
-
-var coor = "X coords: " + x + ", Y coords: " + y;*/
-
-
 $(document).ready(function () {
+    //Detect Browser
+    var browser = navigator.userAgent;
+
+    //Customize Copy Message
+    if(browser.includes('Firefox')){
+        $('.container').addClass('hidden');
+        $('nav').addClass('hidden');
+
+        $('errorMessage').removeClass('showError');
+    }
+
     var contactOpen = false;
     var home;
 
