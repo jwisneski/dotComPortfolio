@@ -126,7 +126,7 @@ button{
 }
 
 button:hover{
-    background-color:orange;
+    background-color:#FF9612;
     border-color:white;
     color:white;
 }
@@ -197,7 +197,7 @@ nav li{
 
 nav a:hover{
     /* feedback */
-    color:orange;
+    color:#FF9612;
 }
 
 nav li:first-of-type{
@@ -267,7 +267,7 @@ section + section{
 }
 
 .copyEmail{
-    color:#1779B8;
+    color:#FF9612;
     text-align:center;
 
     resize:none;
