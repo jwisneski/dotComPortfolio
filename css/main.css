@@ -110,28 +110,27 @@ p{
     cursor:default;
 }
 
-button{
-    /* creates consistent buttons across the entire experience*/
-    width:200px;
-    height:50px;
+.toProject, .toResume{
+    line-height: 20px;
+
+    padding:15px 25px;
 
     background-color:white;
 
     font-size:20px;
-    line-height:50px;
     font-weight:200;
 
     border:1px solid black;
     cursor:pointer;
 }
 
-button:hover{
+.toProject:hover, .toResume:hover{
     background-color:#FF9612;
-    border-color:white;
+    border-color:#FF9612;
     color:white;
 }
 
-button:focus, input:focus, textarea:focus{
+.toProject:focus, .toResume:focus, input:focus, textarea:focus{
     /*removes the default blue outline on clicked state*/
     outline:none;
 }
@@ -351,8 +350,17 @@ section + section{
 }
 
 .resume a{
-    padding:0;
     line-height:30px;
+}
+
+.resume .toProject{
+    padding:0;
+    border-color:white;
+}
+
+.resume .toProject:hover{
+    background-color:white;
+    color:#FF9612;
 }
 
 .resume-highlights{
