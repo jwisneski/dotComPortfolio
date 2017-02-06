@@ -336,6 +336,8 @@ b{
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+
+    padding:0;
 }
 
 .nextPreviousProjects p{
@@ -595,7 +597,7 @@ b{
     flex-direction:column;
 }
 
-.kohlsTesting{
+.processTesting{
     background-image:url('https://jwisneski.github.io/portfolio/images/kohlsTesting.jpg');
     background-size:contain;
     background-repeat: no-repeat;
