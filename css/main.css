@@ -358,6 +358,10 @@ section + section{
     border-color:white;
 }
 
+.resume .resume-callouts{
+    padding:0;
+}
+
 .resume .toProject:hover{
     background-color:white;
     color:#FF9612;
