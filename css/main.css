@@ -358,7 +358,7 @@ section + section{
     border-color:white;
 }
 
-.resume-callouts a{
+.resume-callouts .toExternal{
     padding:0;
 }
 
