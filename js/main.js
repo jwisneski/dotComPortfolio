@@ -6,14 +6,15 @@ function swapClasses(newClass){
 $(document).ready(function () {
     //Detect Browser
     var browser = navigator.userAgent;
+    browser=browser.toString( );
 
-    //Customize Copy Message
-    /*if(navigator.userAgent.search("Firefox")){
+    // Firefox does not like flexboxes
+    if(browser.match("Firefox")){
         $('.container').addClass('hidden');
         $('nav').addClass('hidden');
 
         $('.errorMessage').removeClass('hidden');
-    }*/
+    };
 
     var contactOpen = false;
     var home;
