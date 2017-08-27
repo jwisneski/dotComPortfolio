@@ -1,19 +1,16 @@
 <html lang='en'>
     <head>
-        <meta charset='UTF-8'>
-        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <meta charset='UTF-8' name="viewport" content="width=device-width, initial-scale=1">
 
-        <link rel='stylesheet' type='text/css' href='https://jwisneski.github.io/portfolio/css/main.css'>
-        <!--<link rel='stylesheet' type='text/css' href='css/main.css'>-->
-        <!--<link rel='stylesheet' type='text/css' href='css/mobile.css'>-->
+        <!--<link rel='stylesheet' type='text/css' href='https://jwisneski.github.io/portfolio/css/main.css'>-->
+        <link rel='stylesheet' type='text/css' href='css/main.css'>
 
         <script src='https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js'></script>
-        <script src='https://jwisneski.github.io/portfolio/js/main.js'></script>
-        <!--<script src='js/main.js'></script>-->
 
-        <script src="https://use.fontawesome.com/2e0f3cd314.js"></script>
+        <!--<script src='https://jwisneski.github.io/portfolio/js/main.js'></script>-->
+        <script src='js/main.js'></script>
 
-        <script>
+        <!--<script>
           //Google Analytics script
           //Google Analytics script
             (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -33,328 +30,97 @@
                 a.appendChild(r);
             })(window,document,'//static.hotjar.com/c/hotjar-','.js?sv=');
       </script>
-
+  -->
     </head>
 
     <body>
         <section class='container'>
-            <section class='about' id='about'>
-                <section>
-                    <div class='photoOfMe'></div>
+            <section class='me'>
+                <section class='pageTitle'>
+                        <h1>Joel Wisneski</h1>
+                        <h2>I design things<span>&#44; well</span></h2>
+
+                        <a href="">Talk to me</a>
                 </section>
 
-                <section>
-                    <h2>Experience Designer</h2>
-                    <p>I co-create e-commerce experiences with customers.
-                        I find the overlap between the absurd and the possible.
-                        I also brew homemade soda and build furniture in my spare time.</p>
+                <section class='pagination'>
+                    <div class='selected'><p>Me</p><div class="dot"></div></div>
+                    <div><p>Who</p><div class="dot"></div></div>
+                    <div><p>What</p><div class="dot"></div></div>
+                    <div><p>How</p><div class="dot"></div></div>
+                    <div><p>Why</p><div class="dot"></div></div>
+                </section>
 
-                    <p class='bigScreen'>Right now I'm working at Kohl's, reinforcing customer-centric values
-                        from browsing through purchase across mobile, tablet and desktop experiences.</p>
+                <div class='downArrow'></div>
+            </section>
+
+            <section class='who'>
+                <section class='pageTitle'>
+                    <h1>Who I design for</h1>
+                    <h2>Hint&#58; It's the customer</h2>
+
+                    <a href="">Send me an email</a>
+                </section>
+
+                <section class='pagination'>
+                    <div><p>Me</p><div class="dot"></div></div>
+                    <div  class='selected'><p>Who</p><div class="dot"></div></div>
+                    <div><p>What</p><div class="dot"></div></div>
+                    <div><p>How</p><div class="dot"></div></div>
+                    <div><p>Why</p><div class="dot"></div></div>
                 </section>
             </section>
 
-            <section class='contact'>
-                <!--<button class='contactBtn'>contact CTA</button>-->
+            <section class='what'>
+                <section class='pageTitle'>
+                    <h1>What I do all day</h1>
+                    <h2>The <span>&#40;even more&#41;</span> abridged version</h2>
 
-                <h3>Send me an email</h3>
-
-                <div class="copyEmailContainer">
-                   <textarea class="copyEmail" rows="1" cos="20" readonly>jawisneski@gmail.com</textarea>
-
-                   <p class="emailHint hidden"> &#8984; + C to copy</p>
-               </div>
-            </section>
-
-            <section class='resume' id='resume'>
-                <section class='resume-highlights'>
-                    <!--<h2>highlights</h2>-->
-
-                    <div><h3>Experience Designer</h3><span>
-                        <a href='kohls.html' class='toProject'>The Mini Bag</a></span></div>
-                    <div><h3><a href='http://kohls.com' target='_blank' class='toExternal'>Kohl's Department Stores</a></h3>
-                        <span><em>Fall 2015 to now</em></span></div>
-                    <div class='bigScreen'>
-                        <ul>
-                            <li>Crafting concepts, initiated by results of rapid iterative testing, for a project estimated to increase sales by $108 million over 3 years</li>
-                            <li>Led the design effort on a shopping bag project reducing a step in checkout for 7% of online customers</li>
-                            <li>Reinforcing customer-centric values from browsing through purchase across mobile, tablet and desktop experiences</li>
-                        </ul>
-                    </div>
-
-                    <div><h3>Contract Web Designer</h3><span>
-                        <a href='imageMatters.html' class='toProject'>Company website</a></span></div>
-                    <div><h3><a href='http://www.imagemattersllc.com' target='_blank' class='toExternal'>Image Matters, LLC</a></h3>
-                        <span><em>Summer 2015 to Fall 2015</em></span></div>
-                    <div class='bigScreen'>
-                        <ul>
-                            <li>Audited and organized the current information into a customer centric layout and architecture</li>
-                            <li>Built a website platform with Wordpress allowing for easy content creation and maintenance</li>
-                        </ul>
-                    </div>
-
-                    <div><h3>Interaction Design Intern</h3><span>
-                        <a href='salesforce.html' class='toProject'>GroupConnect</a></span></div>
-                    <div><h3><a href='http://salesforcemarketingcloud.com' target='_blank' class='toExternal'>Salesforce Marketing Cloud</a></h3>
-                        <span><em>Summer 2015</em></span></div>
-                    <div class='bigScreen'>
-                        <ul>
-                            <li>Developed a marketing solution using wireframes and mock ups sending 1 billion messages/day on common social media platforms</li>
-                            <li>Supported a pattern library effort with a layout audit across multiple enterprise software applications</li>
-                        </ul>
-                    </div>
-
-                    <div><h3>Master of Science</h3><span>Indiana University</span></div>
-                    <div><h3>Human-Computer Interaction Design</h3><span>Spring 2015</span></div>
-
+                    <a href="">Say &#34;hey&#34;</a>
                 </section>
-                <section class='resume-callouts'>
-                    <!--<h2>tl;dr</h2>-->
-                    <section class="resumeDownload">
-                        <a class="toResume" href='https://jwisneski.github.io/portfolio/JoelWisneski-Resume.pdf' target='_blank'>Download my r&eacute;sum&eacute;</a>
-                    </section>
 
-                    <p class='bigScreen'>A few other things about me,
-                        <ul>
-                            <li>I play guitar</li>
-                            <li><a href='https://thenounproject.com/joelski/' target='_blank' class='toExternal'>I design icons for The Noun Proect</a></li>
-                            <li><a href='https://www.etsy.com/listing/470749702/industrial-subway-tile-coffee-table?ref=shop_home_feat_1' target='_blank' class='toExternal'>I build and sell furniture on Etsy</a></li>
-                        </ul>
-                    </p>
-
-                    <section class='contact'>
-                        <!--<button class='contactBtn'>contact CTA</button>-->
-
-                        <h3>Send me an email</h3>
-
-                        <div class="copyEmailContainer">
-                           <textarea class="copyEmail" rows="1" cos="20" readonly>jawisneski@gmail.com</textarea>
-
-                           <p class="emailHint hidden"> &#8984; + C to copy</p>
-                       </div>
-                    </section>
+                <section class='pagination'>
+                    <div><p>Me</p><div class="dot"></div></div>
+                    <div><p>Who</p><div class="dot"></div></div>
+                    <div  class='selected'><p>What</p><div class="dot"></div></div>
+                    <div><p>How</p><div class="dot"></div></div>
+                    <div><p>Why</p><div class="dot"></div></div>
                 </section>
             </section>
 
-            <section id='projects' class='projects'>
-                <section class='kohlsProject'>
-                    <div class='projects-bagPage'>
-                        <div class='projects-bag bagOpen'>
-                            <div class='projects-bagProducts'>
-                                <div class='product'></div>
-                                <div class='product'></div>
-                                <div class='product'></div>
-                                <div class='product'></div>
-                                <div class='product'></div>
-                            </div>
-                        </div>
+            <section class='how'>
+                <section class='pageTitle'>
+                    <h1>How I solve problems</h1>
+                    <h2>It&#39;s a messy process</h2>
 
-                        <div class='projects-navBar'>
-                            <div class='projects-checkout'></div>
-                        </div>
-
-                        <div class='projects-KohlsSummary'>
-                            <p>Reducing steps to check out by showing a shopping bag where ever the
-                                customer happens to be.</p>
-
-                            <a class="toProject" href='kohls.html'>The Mini Bag</a>
-                        </div>
-                    </div>
+                    <a href="">Let&#39;s talk</a>
                 </section>
 
-                <section class='imProject'>
-                    <div class='imDeviceContainer'>
-                        <div class='macbook'>
-                            <div class='bezel'>
-                                <div class='screen'>
-                                    <div class='imThumbHeader'></div>
-                                    <div class='imThumbContent'></div>
-                                </div>
-                            </div>
-                            <div class='case'>
-                                <div class='opener'></div>
-                            </div>
-                        </div>
-
-                        <div class='phone'>
-                            <div class='phoneBezel'>
-                                <div class='phoneScreen'>
-                                    <div class='imThumbHeader'></div>
-                                    <div class='imThumbContent'></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <p>An easy to update, responsive Wordpress website and style guide for a
-                        small consultancy.</p>
-                    <a class="toProject" href='imageMatters.html'>Company Website</a>
-                </section>
-
-                <section class='sfProject'>
-                    <div class='projects-sfSummary'>
-                        <p>Connecting marketers to customers with messaging apps like Line,
-                            WhatsApp and WeChat.</p>
-
-                            </br>
-                        <a class="toProject" href='salesforce.html'>GroupConnect</a>
-                    </div>
-
-                    <div class='projects-timeline'></div>
-                    <div class='projects-messageGroup incoming'>
-                        <div class='message'></div>
-                        <div class='messageDot'></div>
-                    </div>
-
-                    <div class='projects-messageGroup outgoing messageGroupB'>
-                        <div class='message'></div>
-                        <div class='messageDot'></div>
-                    </div>
-
-                    <div class='projects-messageGroup error messageGroupC'>
-                        <div class='message'></div>
-                        <div class='messageDot'></div>
-                    </div>
+                <section class='pagination'>
+                    <div><p>Me</p><div class="dot"></div></div>
+                    <div><p>Who</p><div class="dot"></div></div>
+                    <div><p>What</p><div class="dot"></div></div>
+                    <div  class='selected'><p>How</p><div class="dot"></div></div>
+                    <div><p>Why</p><div class="dot"></div></div>
                 </section>
             </section>
 
-            <section class='contact'>
-                <!--<button class='contactBtn'>contact CTA</button>-->
+            <section class='why'>
+                <section class='pageTitle'>
+                    <h1>Why I enjoy it</h1>
+                    <h2>I sketch&#44; create&#44; destroy and rebuild ideas</h2>
 
-                <h3>Send me an email</h3>
-
-                <div class="copyEmailContainer">
-                   <textarea class="copyEmail" rows="1" cos="20" readonly>jawisneski@gmail.com</textarea>
-
-                   <p class="emailHint hidden"> &#8984; + C to copy</p>
-               </div>
-            </section>
-
-            <section class='process' id='process'>
-                <section class="processPhoto bigScreen">
-                    <div class="line"></div>
-                    <div class="processStop processHighlight"><i class="fa fa-pencil" aria-hidden="true"></i></div>
-                    <div class="processStop"><i class="fa fa-flask" aria-hidden="true"></i></div>
-                    <div class="processStop"><i class="fa fa-refresh" aria-hidden="true"></i></div>
+                    <a href="">You know you want to</a>
                 </section>
 
-                <section class="processTop">
-                    <section class="processLeft">
-                        <h3>Frame the problem</h3>
-                        </br></br>
-                        <p>What are we trying to solve? Is that really what we should be solving? What do we know right now? What do we need to know?</p>
-                    </section>
-
-                    <section class="processRight">
-                        <h3>Sketch (a lot) of solutions</h3>
-                        </br></br>
-                        <p>Get the idea out there and get some feedback.</p>
-                    </section>
-
-                    <section class="processSketches bigScreen"></section>
-                    <section class="processSketches processSketchesSecond bigScreen"></section>
-
+                <section class='pagination'>
+                    <div><p>Me</p><div class="dot"></div></div>
+                    <div><p>Who</p><div class="dot"></div></div>
+                    <div><p>What</p><div class="dot"></div></div>
+                    <div><p>How</p><div class="dot"></div></div>
+                    <div class='selected'><p>Why</p><div class="dot"></div></div>
                 </section>
-
-                <section class="processPhoto bigScreen">
-                    <div class="line"></div>
-                    <div class="processStop"><i class="fa fa-pencil" aria-hidden="true"></i></div>
-                    <div class="processStop processHighlight"><i class="fa fa-flask" aria-hidden="true"></i></div>
-                    <div class="processStop"><i class="fa fa-refresh" aria-hidden="true"></i></div>
-                </section>
-
-                <section class="processMiddle">
-                    <section class="processLeft">
-                        <h3>Put it in front of customers</h3>
-                        </br></br>
-                        <p>Make some assumptions but don’t have all the answers. Leave some obvious parts of the design out to start a conversation about what the customers expect.</p>
-                    </section>
-
-                    <section class="processRight processTesting bigScreen"></section>
-                </section>
-
-                <section class="processPhoto bigScreen">
-                    <div class="line"></div>
-                    <div class="processStop"><i class="fa fa-pencil" aria-hidden="true"></i></div>
-                    <div class="processStop"><i class="fa fa-flask" aria-hidden="true"></i></div>
-                    <div class="processStop processHighlight"><i class="fa fa-refresh" aria-hidden="true"></i></div>
-                </section>
-
-                <section class="processBottom">
-                    <section class="processLeft processCards bigScreen">
-                        <div class="card cardV0"></div>
-                        <div class="card cardV1"></div>
-                        <div class="card cardV2"></div>
-                        <div class="card cardV3"></div>
-                        <div class="card cardV4"></div>
-                    </section>
-
-                    <section class="processRight">
-                        <h3>Refine and repeat</h3>
-                        </br></br>
-                        <p>Keep improving it and putting it back in front of customers. Branch out from the core of the experience and start testing more assumptions.</p>
-                    </section>
-                </section>
-            </section><!--end process-->
-
-            <section class='contact'>
-                <!--<button class='contactBtn'>contact CTA</button>-->
-
-                <h3>Send me an email</h3>
-
-                <div class="copyEmailContainer">
-                   <textarea class="copyEmail" rows="1" cos="20" readonly>jawisneski@gmail.com</textarea>
-
-                   <p class="emailHint hidden"> &#8984; + C to copy</p>
-               </div>
-            </section>
-
-            <section class="footer">
-                <div><a href='https://github.com/jwisneski/portfolio' target='_blank' class='toExternal'>Powered by <i class="fa fa-github" aria-hidden="true"></i> Github</a></div>
-                <div><a href='http://fontawesome.io' target='_blank' class='toExternal'>Icons by <i class="fa fa-flag" aria-hidden="true"></i> FontAwesome</a></div>
-                <div>&copy; Joel Wisneski 2017</div>
             </section>
         </section><!--container-->
-
-        <nav class='slowTransition'>
-            <ul>
-                <li><a href='#about' class='active aboutLink'>Joel Wisneski</a></li>
-                <li><a href='#resume' class='resumeLink'>r&eacute;sum&eacute;</a></li>
-                <li><a href='#projects' class='projectsLink'>projects</a></li>
-                <li><a href='#process' class='processLink'>process</a></li>
-            </ul>
-        </nav>
-
-        <section class='whiteOverlay hidden'>
-            <section class="contactForm">
-                <label>name</label>
-                <input placeholder='contact name'></input>
-
-                <label>message</label>
-                <input placeholder='contact msg'></input>
-
-                <button class='' type='submit'>Send a message</button>
-            </section>
-        </section>
-
-        <section class='errorMessage hidden'>
-            <h1 class='fire'>Joel Wisneski</h1>
-            <h3 class='fire'>Experience Designer</h3>
-
-            <p class='fire'>Hey there, so it turns out Firefox really does not like the flexbox tag. As I have used that
-                particular tag heavily on my site, it's not looking so hot. Feel free to get in touch and I can personally show you
-                my work.
-            </br>
-            </br>
-            Chrome, Safari and modern versions of Internet Explorer will have a little more luck.</p>
-
-            <h3 class='contactFire'>Send me an email</h3>
-
-            <div class="copyEmailContainer fire">
-               <textarea class="copyEmail" rows="1" cos="20" readonly>jawisneski@gmail.com</textarea>
-
-               <p class="emailHint hidden"> &#8984; + C to copy</p>
-           </div>
-        </section>
     </body>
 </html>
