@@ -1,288 +1,559 @@
-function swapClasses(newClass){
-    $('.active').removeClass('active');
-    $(newClass).addClass('active');
+// Project Open
+var project='';
+var positions={ };
+var currentPosition;
+
+// get current position as soon as page loads
+var newSection='';
+var oldSection='';
+
+var contact=false;
+var currentPosition=0;
+
+stop=0;
+lastStop=0;
+scrollDistance=0;
+
+function getScrollPositions(){
+    // get direct children of body and turn that into an array
+    var sectionParkingLot=document.querySelector('.mainContainer').children;
+    var sectionList=Array.from(sectionParkingLot);
+
+    for (i = 0; i < sectionList.length; i++) {
+        //check array for <section> children
+        var element=sectionList[i].outerHTML.toString( );
+
+        if(element.startsWith('<section')){
+            //strip non-sections and get name for dictionary
+            element=sectionList[i];
+
+            //get the meta data first, then the FIRST classname (hence the split[0])
+            var keyName=element.getAttribute('data-section-name');
+            var valueName=element.className.split(' ')[0];
+
+            //convert to section.something to get distance from top of the screen
+            if(keyName=='Joel Wisneski'){
+                var valueName=50;
+            }else{
+                var valueName='section.' + valueName;
+                var valueName=$(valueName).offset().top-70;
+            }
+
+            //if it's a valid number add to the dictionary
+            if(keyName!=null && valueName >= 0){
+                positions[keyName]=valueName
+            }
+        }
+    }
 }
 
-$(document).ready(function () {
-    //Detect Browser
-    var browser = navigator.userAgent;
-    browser=browser.toString( );
+function pageScroll( ){
+    // we round here to reduce a little workload
+    lastStop=stop;
+    stop = Math.round($(window).scrollTop());
 
-    // Firefox does not like flexboxes
-    if(browser.match("Firefox")){
-        $('.container').addClass('hidden');
-        $('nav').addClass('hidden');
-
-        $('.errorMessage').removeClass('hidden');
-    };
-
-    var contactOpen = false;
-    var home;
-
-    if($('#about').length > 0){
-        home=true;
+    for(var key in positions){
+        if(stop>positions[key]){
+            newSection=key;
+        }
     }
 
-    if(home){
-        // default scroll variables
-        aboutScroll = $('#about').offset().top + $('#about').height();
-        resumeScroll = $('#resume').offset().top + $('#resume').height();
-        projectsScroll = $('#projects').offset().top + $('#projects').height();
-        processScroll = $('#process').offset().top + $('#process').height();
+    if(oldSection!=newSection){
+        oldSection=newSection;
+
+        // get class name of element based on data-section-name
+        var hash=$("body").find("[data-section-name='" + newSection + "']");
+        hash=hash.attr('class').split(' ')[0];
+
+        // update link with #id and update title with data-section-name
+        //history.pushState(null, null, '#'+hash);
+        changeTitle(newSection, '#'+hash);
+    }
+}
+
+function stopScroll( ){
+    // we round here to reduce a little workload
+    stop = Math.round($(window).scrollTop());
+    $('html, body').animate({
+        scrollTop: stop
+    });
+}
+
+function scrollPage(pageSection){
+    // scroll to section on page
+    var sectionList = document.getElementsByClassName(pageSection);
+    var targetSection;
+
+    for (i = 0; i < sectionList.length; i++) {
+        //check array for <section> children
+        var element=sectionList[i].outerHTML.toString( );
+
+        if(element.startsWith('<section')){
+            //strip non-sections and get name for dictionary
+            targetSection=sectionList[i];
+            targetSection=targetSection.getAttribute('data-section-name');
+            break;
+        }
     }
 
-    stop=0;
-    lastStop=0;
-    scrollDistance=0
+    for(var key in positions){
+        if(key==targetSection){
+            var newPosition;
 
-    /*
-    // override pushstate for chrome and android
-    $(document).bind('mobileinit',function(){
-        $.mobile.changePage.defaults.changeHash = false;
-        $.mobile.hashListeningEnabled = false;
-        $.mobile.pushStateEnabled = false;
-    });*/
+            if(key=='Joel Wisneski'){
+                newPosition=0;
+            }else{
+                newPosition= positions[key];
+                newPosition+=70;
+            }
 
+            var oldPosition = Math.round($(window).scrollTop());
+            var timing = Math.abs((oldPosition-newPosition)*(3/7));
+            Math.round(timing);
 
-    // Contact function needs to be specific to the one you're clicking
-    $('.copyEmail').on('click tap', function (event) {
-        event.preventDefault();
+            $('html, body').animate({
+                scrollTop: newPosition
+            }, timing, 'swing');
 
-        //Detect Browser
-        var browser = navigator.userAgent;
+            break;
+        }
+    }
+}
 
-        //Customize Copy Message
-        if(browser.includes('Macintosh')){
-            console.log('Mac');
-            $('.emailHint').html('&#8984; + C to copy');
+function showText( ){
+    // show ',well'
+    $('.me span').css('opacity', '1');
+}
 
-        }else if(browser.includes('iPhone') || browser.includes('iPad') || browser.includes('iPod')){
+// show contact section
+function toggleContact(shown, newSection){
+    if(!shown){
+        //get position
+        var newPosition;
+        stop = Math.round($(window).scrollTop());
 
-            //need to change input to non-text area to copy !!!!!!!!!
-
-            $('.emailHint').html('Press and hold to copy');
-
-        }else if(browser.includes('Windows')){
-            $('.emailHint').html('CTRL + C to copy');
+        for(var key in positions){
+            if(stop>positions[key]){
+                newSection=key;
+            }
         }
 
-        $(this).focus().select();
-        $('.emailHint').removeClass('hidden');
+        $('.contact h1').removeClass('fromMe');
+        $('.contact h1').removeClass('fromWho');
+        $('.contact h1').removeClass('fromWhat');
+        $('.contact h1').removeClass('fromHow');
+        $('.contact h1').removeClass('fromWhy');
+
+        $('.contact h2').removeClass('hideCopy');
+
+        if(newSection=='Joel Wisneski'){
+            $('.contact h1').addClass('fromMe');
+        }else if(newSection=='Who I work for'){
+            $('.contact h1').addClass('fromWho');
+        }else if(newSection=='What I do'){
+            $('.contact h1').addClass('fromWhat');
+        }else if(newSection=='How I do it'){
+            $('.contact h1').addClass('fromHow');
+        }else if(newSection='Why I do it'){
+            $('.contact h1').addClass('fromWhy');
+        }
+
+        // show contact
+        $('.contact').addClass('contactShown');
+        changeTitle('Talk to Joel', '#contact');
+
+        $('.emailPlaceholder').select( );
+
+        //this has to be old section to register properly in the pageScroll function
+        oldSection='contact';
+
+        $('body').addClass('hideOverflow');
+    } else{
+        // close contact
+        $('.contact').removeClass('contactShown');
+        $('body').removeClass('hideOverflow');
+        pageScroll( );
+    }
+
+    contact=!contact;
+}
+
+function toggleProject(element){
+    if(element!=''){
+        project=element;
+        // display appropriate content? or fade in/slide up one by one?
+        //show project container (slide up)
+        $('section.'+ project).addClass('projectContainerShown');
+
+        // get the right project container
+        var projectName=document.querySelector('section.projectContainer.' + project);
+
+        // get all children from project container and add them to an array
+        var sectionParkingLot=projectName.children;
+        var sectionList=Array.from(sectionParkingLot);
+
+        // var descendants = projectName.querySelectorAll('*');
+        // for (i = 0; i < descendants.length; i++) {
+        //
+        //     // check if you can run the include function
+        //     if(descendants[i].className.includes){
+        //         // check if the class name includes fadeUp
+        //         if(descendants[i].className.includes('fadeUp')){
+        //             // add these descendants to the new array
+        //             descendants[i].removeClass('fadeUp');
+        //         }
+        //     }
+        // }
+
+        // format and change page link
+        var linkName = projectName.className.split(' ')[1];
+        projectName=projectName.getAttribute('data-section-name');
+        changeTitle(projectName, '#'+linkName);
+
+        //this has to be old section to register properly in the pageScroll function
+        oldSection=project;
+
+        // keep body from scrolling while a project is open
+        $('body').addClass('hideOverflow');
+
+    } else{
+        // close contact
+        pageScroll( );
+        $('.projectContainer').removeClass('projectContainerShown');
+        project='';
+
+        $('body').removeClass('hideOverflow');
+    }
+}
+
+function randomNumber(upperLimit){
+    var number= Math.floor(Math.random() * upperLimit);
+    return number;
+}
+
+function randomColor(dark){
+    darkColors = ['474647', '1F76DB', 'FA7921', '235789', '000'];
+    lightColors = ['E7ECEF', 'fff'];
+
+    var color='#';
+
+    if(dark){
+        //random dark color
+        color+= darkColors[randomNumber(5)];
+    }else{
+        //random light color
+        color+= lightColors[randomNumber(2)];
+    }
+
+    return color;
+}
+
+function detectBrowser( ){
+    var browser = navigator.userAgent;
+
+    if(browser.includes('Macintosh')){
+        return 'OSX';
+
+    }else if(browser.includes('iPhone') || browser.includes('iPad') || browser.includes('iPod')){
+        return 'iOS';
+
+    }else if(browser.includes('Android')){
+        return 'Android';
+
+    }else if(browser.includes('Windows')){
+        return 'Windows'
+    }
+}
+
+function updateEmailText( ){
+    var browser = detectBrowser( );
+
+    //Customize Copy Email Message
+    if(browser=='OSX'){
+        $('.contact h2').html('&#8984; + C to copy');
+    }else if(browser=='Android' || browser=='iOS'){
+        $('.contact h2').html('Press and hold to copy');
+    }else if(browser=='Windows'){
+        $('.contact h2').html('CTRL + C to copy');
+    }
+}
+
+function updateBannerText(lastProject, scrollingUp){
+    var headline;
+    var subhead;
+
+    var headlines=['Nationwide Mobile App',
+                            'The Savings Launcher',
+                            'The Kohl&#8217;s Mini Bag',
+                            'ImageMatters Website'];
+
+    var subheads=['One app for all your sides',
+                            'Discounts without the Kohl&#8217;s Math',
+                            'It&#8217;s dangerous to go alone &comma take this',
+                            'A modern website for a growing company'];
+
+    var images=[ ]
+
+    if(scrollingUp){
+        // Project that was clicked on
+        var h4 = '.continueBanner h4';
+        var h2 = '.continueBanner h2';
+        //var image='.continueBanner .projectImage';
+
+        $(h4).html(headlines[lastProject]);
+        $(h2).html(subheads[lastProject]);
+        //$(image).css('background-image', images[lastProject]);
+
+    }else{
+        // next project
+        var h4 = '.nextBanner h4';
+        var h2 = '.nextBanner h2';
+        //var image='.nextBanner .projectImage';
+
+        if((lastProject+1)<=headlines.length){
+            // if there is a "next"
+            $(h4).html(headlines[lastProject+1]);
+            $(h2).html(subheads[lastProject+1]);
+            //$(image).css('background-image', images[lastProject+1]);
+
+        }else{
+            // else wrap
+            $(h4).html(headlines[0]);
+            $(h2).html(subheads[0]);
+            //$(image).css('background-image', images[0]);
+        }
+    }
+}
+
+// Open pages with transitions
+var main = document.querySelector('.projectContainer');
+var cache = { };
+
+function loadPage(url) {
+  if (cache[url]) {
+      return new Promise(function(resolve) {
+      resolve(cache[url]);
+    });
+  }
+
+  return fetch(url, {
+    method: 'GET'
+  }).then(function(response) {
+    cache[url] = response.text();
+    return cache[url];
+  });
+}
+
+function changeTitle(newTitle, hash){
+    $(document).prop('title', newTitle);
+    history.pushState(null, null, hash);
+}
+
+function changePage() {
+    // URL has already been changed in loadPage( );
+    var url = window.location.href;
+
+    loadPage(url).then(function(responseText) {
+        var wrapper = document.createElement('section.project');
+
+        wrapper.innerHTML = responseText;
+
+        var oldContent = document.querySelector('body');
+        //added .project to prevent doubling first section on reload of the homepage
+        var newContent = wrapper.querySelector('section.project');
+
+        var projectPage=main.appendChild(newContent);
+
+        $('.projectContainer').removeClass('empty');
+        animate(oldContent, newContent);
+
+        $('.contactBtn').addEventListener('click', function( ){
+            updateEmailText( );
+
+            //scroll to that section
+            toggleContact(contact, newSection);
+        });
+    });
+}
+
+function stripProjectContainer( ){
+    var myNode = document.getElementsByClassName('projectContainer');
+    while (myNode.firstChild) {
+        myNode.removeChild(myNode.firstChild);
+    }
+}
+
+function animate(oldContent, newContent) {
+    var fadeOut = oldContent.animate({
+        opacity: [1, 0]
+}, 2000);
+
+    var fadeIn = newContent.animate({
+        opacity: [0, 1]
+}, 2000);
+
+    // Don't use this? keep old content and use it to speed up transitions
+    fadeIn.onfinish = function() {
+        oldContent.parentNode.removeChild(oldContent);
+    };
+}
+
+window.addEventListener('popstate', changePage);
+
+$(document).ready(function () {
+    newSection='Joel Wisneski';
+    oldSection='Joel Wisneski';
+
+    getScrollPositions( );
+    stripProjectContainer( )
+
+    // for smaller screens, show ',well' on home
+    // var width=$(window).width();
+    // if(width<601){
+    //     setTimeout(showText, 800);
+    // }
+
+    // Highlights for pagination dots/sections
+    $('.pagination>div').on('mouseenter', function(e){
+        if(e.target.className!='selected'){
+            $(this).children('p').addClass('hovered');
+            $(this).addClass('hoveredPage');
+        }else{
+            e.preventDefault( );
+        }
     });
 
-    $('.copyEmail' ).on('focusout', function (event) {
-        $('.emailHint').addClass('hidden');
+    $('.pagination>div').on('mouseleave', function(e){
+        $(this).children('p').removeClass('hovered');
+        $(this).removeClass('hoveredPage');
+    });
+
+    $('.pagination>div').on('click', function(e){
+        //scroll to that section
+        var pageSection = $(this).children('p').text();
+        scrollPage(pageSection);
+    });
+
+    $('.pagination div').on('click tap', function (event) {
+        // this one needs some work
+        var linkName = event.target.className.split(' ')[0];
+
+        // get the section name
+        linkName = linkName.replace('Link', ' ');
+        linkName = '#' + linkName;
+
+        $('html, body').animate({
+            scrollTop: $(linkName).offset().top - 60
+        }, 500, 'swing');
+    });
+
+    $('.projects>div').on('mouseenter', function(e){
+        if(e.currentTarget.className=='guitar' || e.currentTarget.className=='furniture'){
+            console.log(e.currentTarget.className);
+        }else{
+            $(this).addClass('projectHovered');
+        }
+    });
+
+    $('.projects>div').on('mouseleave', function(e){
+        $(this).removeClass('projectHovered');
+    });
+
+    $('.contactBtn').on('mouseenter', function(e){
+        $(this).children('.downArrow').addClass('hovered')
+    });
+
+    $('.contactBtn').on('mouseleave', function(e){
+        $(this).children('.downArrow').removeClass('hovered')
+    });
+
+    $('.contactBtn').on('click', function(e){
+        //check for browser
+        updateEmailText( );
+
+        //scroll to that section
+        toggleContact(contact, newSection);
+    });
+
+    $('.contact').on('click', function(e){
+        // check if text is selected
+        var text = "";
+        if (typeof window.getSelection != "undefined") {
+            text = window.getSelection().toString();
+        } else if (typeof document.selection != "undefined" && document.selection.type == "Text") {
+            text = document.selection.createRange().text;
+        }
+
+        // check if email is selected
+        if(text=='Hi@Joelski.design'){
+            $('.contact h2').removeClass('hideCopy');
+        }else{
+            $('.contact h2').addClass('hideCopy');
+        }
+    });
+
+    $('.me .downArrow').on('click', function(e){
+        // scroll down on home page
+        var position = $('.me').height( );
+        $('html, body').animate({
+            scrollTop: position
+        }, 400, 'swing');
+    });
+
+    $('.upArrow').on('click tap', function(){
+        toggleProject('');
     });
 
     $( window ).resize(function(){
-        if(home){
-            // reset scroll variables for new heights
-            aboutScroll = $('#about').offset().top + $('#about').height();
-            resumeScroll = $('#resume').offset().top + $('#resume').height();
-            projectsScroll = $('#projects').offset().top + $('#projects').height();
-            processScroll = $('#process').offset().top + $('#process').height();
-        }
+        getScrollPositions( );
     });
 
     // scroll function changes "active" based on scrolling
     $(window).on('scroll',function(){
-
-        // we round here to reduce a little workload
-        lastStop=stop;
-        stop = Math.round($(window).scrollTop());
-
-        if(!home){
-            if(stop<lastStop){
-                //check if we're scrolling up add to distance calc
-                scrollDistance++;
-            }else{
-                //otherwise we're scrolling down, reset the distance calc
-                scrollDistance=0;
-            }
-
-            if(scrollDistance>49){
-                // if general direction is up, show next/previous projects
-                $('.nextPreviousProjects').addClass('nextPreviousProjectsShown');
-            }else{
-                // otherwise hide the panel
-                $('.nextPreviousProjects').removeClass('nextPreviousProjectsShown');
-            }
-        }
-
-        if(home){
-            if (stop < projectsScroll) {
-                // we're above the bottom of projects
-                if (stop < resumeScroll){
-                    //we're above the bottom of resume
-                    if (stop < aboutScroll){
-                        swapClasses('.aboutLink');
-                    }else{
-                        swapClasses('.resumeLink');
-                    }
-                }else{
-                    swapClasses('.projectsLink');
-                }
-            } else{
-                //we're not above the bottom of projects
-                swapClasses('.processLink');
-            }
+        //figure out where we are starting on the page (in window.load)
+        if(project==''){
+            pageScroll( );
         }
     });
 
-    $('a').on('click tap', function (event) {
-        if(event.target.className=='toProject'){
-            //open link with an ajax call eventually
-            //event.preventDefault();
-        }else if(event.target.className=='toExternal'
-                    || event.target.className=='toResume'){
-            //do nothing, just go to the link in a new window
+    $(window).on("blur focus", function(e) {
+        var prevType = $(this).data("prevType");
+        var currentTitle=$(document).prop('title');
+
+        if (prevType != e.type) {   //  reduce double fire issues
+            switch (e.type) {
+                case "blur":
+                // do work
+                changeTitle("Joel's Portfolio");
+
+                break;
+            case "focus":
+                // do work
+                changeTitle(currentTitle);
+
+                break;
+            }
+        }
+
+        $(this).data("prevType", e.type);
+    });
+
+    window.addEventListener("hashchange", function(e) {
+        // hide contact on safari
+        $('.contact').removeClass('contactShown');
+
+        // Toggle contact (off)
+        toggleContact(contact, newSection);
+    });
+
+    $('.projects div').on('click tap', function(e){
+        if(e.currentTarget.className=='nounProject'){
+            window.open('https://thenounproject.com/joelski/', '_blank');
         }else{
-            //stay on this page
-
-            if(home){
-                event.preventDefault();
-
-                // get first class name (not .active)
-                var linkName = event.target.className.split(' ')[0];
-
-                // get the section name
-                linkName = linkName.replace('Link', ' ');
-                linkName = '#' + linkName;
-
-                $('html, body').animate({
-                    scrollTop: $(linkName).offset().top - 60
-                }, 500, 'swing');
-            }
+            //get class name of project clicked
+            var element=e.currentTarget;
+            var element=element.className.split(' ')[0];
+            toggleProject(element);
         }
     });
-
-    $('.contactBtn').on('click tap', function (event){
-        if(contactOpen){
-            // remove the contact feature and unblur the background
-            $('.container').removeClass('blurEffect');
-            $('nav').removeClass('blurEffect');
-
-            $('.whiteOverlay').addClass('hidden');
-
-            // remove the click/tap function for container (contact sheet is closed)
-            $( '.whiteOverlay').unbind('click tap');
-        }else{
-            // add the contact feature and unblur the background
-            $('.container').addClass('blurEffect');
-            $('nav').addClass('blurEffect');
-
-            $('.whiteOverlay').removeClass('hidden');
-
-            setTimeout(function(){
-                // creates a listener for clicking outside of the contact form to close
-                $('.whiteOverlay').bind('click tap', function (){
-                    //remove the contact feature and unblur the background
-                    $('.container').removeClass('blurEffect');
-                    $('nav').removeClass('blurEffect');
-
-                    $('.whiteOverlay').addClass('hidden');
-                });
-                // delay the listener so the initial click is not registered
-            }, 100);
-        }
-        contactOpen= !contactOpen;
-    });
-
-    var processSlide = 1;
-
-    $('.process').on('mouseover', function (event) {
-        if(processSlide>1){
-            $('.processBack').removeClass('hidden');
-
-            if(processSlide<5){
-                //show both arrows
-                $('.processForward').removeClass('hidden');
-            }
-        }else{
-            $('.processForward').removeClass('hidden');
-        }
-    });
-
-    $('.process').on('mouseout', function(event){
-        $('.processBack').addClass('hidden');
-        $('.processForward').addClass('hidden');
-    });
-
-    $('.processBack').on('click tap', function (event){
-        if(processSlide > 1){
-            processSlide--;
-
-            if(processSlide==1){
-                //slide is framing
-                $('.processBack').addClass('hidden');
-                $('.sliderContainer').css('margin-left', '0');
-
-                $('.processPhoto').addClass('process01');
-                $('.processPhoto').removeClass('process02');
-            }else if(processSlide==2){
-                //slide is sketching
-                $('.processBack').removeClass('hidden');
-                $('.sliderContainer').css('margin-left', '-100%');
-
-                $('.processPhoto').addClass('process02');
-                $('.processPhoto').removeClass('process03');
-            }else if(processSlide==3){
-                //slide is patterns
-                $('.sliderContainer').css('margin-left', '-200%');
-
-                $('.processPhoto').addClass('process03');
-                $('.processPhoto').removeClass('process04');
-            }else if(processSlide==4){
-                //slide is testing
-                $('.processForward').removeClass('hidden');
-                $('.sliderContainer').css('margin-left', '-300%');
-
-                $('.processPhoto').addClass('process04');
-                $('.processPhoto').removeClass('process05');
-            }else{
-                //slide is building
-                $('.processForward').addClass('hidden');
-                $('.sliderContainer').css('margin-left', '-400%');
-            }
-        }
-    });
-
-    $('.processForward').on('click tap', function (event){
-        if(processSlide < 5){
-            processSlide++;
-            if(processSlide==1){
-                //slide is framing
-                $('.processBack').removeClass('hidden');
-                $('.sliderContainer').css('margin-left', '0');
-            }else if(processSlide==2){
-                //slide is sketching
-                $('.processBack').removeClass('hidden');
-                $('.sliderContainer').css('margin-left', '-100%');
-
-                $('.processPhoto').removeClass('process01');
-                $('.processPhoto').addClass('process02');
-            }else if(processSlide==3){
-                //slide is patterns
-                $('.sliderContainer').css('margin-left', '-200%');
-
-                $('.processPhoto').removeClass('process02');
-                $('.processPhoto').addClass('process03');
-            }else if(processSlide==4){
-                //slide is testing
-                $('.processForward').removeClass('hidden');
-                $('.sliderContainer').css('margin-left', '-300%');
-
-                $('.processPhoto').removeClass('process03');
-                $('.processPhoto').addClass('process04');
-            }else{
-                //slide is building
-                $('.processForward').addClass('hidden');
-                $('.sliderContainer').css('margin-left', '-400%');
-
-                $('.processPhoto').removeClass('process04');
-                $('.processPhoto').addClass('process05');
-            }
-        }
-    })
-
-}); // end document.ready
+});
