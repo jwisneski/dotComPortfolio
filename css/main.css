@@ -237,10 +237,15 @@ a.external p:hover{
     margin:auto;
 }
 
-.what .resumeBtn{
+.who .resumeBtn{
     position:absolute;
     border:none;
+    background-color:#1F76DB;
     display:none;
+}
+
+.who .resumeBtn:hover{
+    background-color:#fff;
 }
 
 .why a, .contact a{
@@ -301,7 +306,7 @@ a.toExternal{
 /* End Page Link overrides ******************/
 
 section, section > div, .pagination, .pagination > div, section.whatProject, .footer section,
-.projects > div, .projectContent, .how > .content, .projectContent .content{
+.projects > div, .projectContent, .how > .content, .projectContent .content, .close{
     display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
     display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
     display: -ms-flexbox;      /* TWEENER - IE 10 */
@@ -783,19 +788,34 @@ section.what{
     top:20px;
     margin:0 auto;
 
+    flex-direction:row;
+    align-items: center;
+    justify-content: space-around;
     align-self:center;
     order:0;
+
+    width:250px;
+    height:50px;
+    padding-left:50px;
+    padding-right:50px;
+    padding-top:30px;
+    padding-bottom:30px;
+}
+
+.close svg{
     width:30px;
     height:30px;
-    padding-left:150px;
-    padding-right:150px;
-    padding-top:10px;
-    padding-bottom:30px;
+}
+
+.close h4{
+    line-height:50px;
 }
 
 .close:hover{
     background-color:#FA7921;
     fill:#fff;
+    color:#fff;
+    cursor:pointer;
 }
 
 /*.fadeUp{
@@ -953,10 +973,16 @@ section.what{
         bottom:20px;
     }
 
-    .what .resumeBtn{
-        left:20px;
-        right:auto;
-        display:block;
+    .who .content{
+        position:relative;
+    }
+
+    .who .resumeBtn{
+        bottom:auto;
+        display:inline-block;
+        left:0;
+        position:relative;
+        margin-top:20px;
     }
 
     .content{
@@ -1139,8 +1165,8 @@ section.what{
         bottom:50px;
     }
 
-    .what .resumeBtn{
-        left:50px;
+    .who .resumeBtn{
+
     }
 
     .contact p{
