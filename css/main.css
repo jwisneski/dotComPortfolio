@@ -168,7 +168,7 @@ a:hover{
     margin-top:50px;
 }
 
-.me .pageTitle, .contact .pageTitle, .sendoff .pageTitle{
+.me .pageTitle, .contact .pageTitle{
     margin-top:100px;
 }
 
@@ -186,10 +186,18 @@ section.miniBag, section.imageMatters{
 
 section.miniBag{
     background-color:#235789;
+
+    background-size:cover;
+    background-position:center;
+    background-image:url('https://jwisneski.github.io/portfolio/images/MapSliceMilwaukee.jpg');
 }
 
 section.imageMatters{
     background-color:#1F76DB;
+
+    background-size:cover;
+    background-position:center;
+    background-image:url('https://jwisneski.github.io/portfolio/images/MapSliceIndy.jpg');
 }
 
 section.savings, section.nationwide{
@@ -225,6 +233,8 @@ a.external p:hover{
 
 .contact a{
     border-color:#474647;
+    background-color:#474647;
+    color:#fff;
 }
 
 .me a:hover{
@@ -233,17 +243,29 @@ a.external p:hover{
 }
 
 .contact a:hover{
-    background-color:#474647;
-    color:#fff;
+    background-color:#fff;
+    color:#474647;
 }
 
-.featured a, .sendoff a{
+.featured a{
     background-color:#fff;
     color:#474647;
     border-color:#474647;
 }
 
-.featured a:hover, .sendoff a:hover{
+.sendoff a{
+    background-color:#EA7E0D;
+    color:#fff;
+    border-color:#EA7E0D;
+}
+
+.sendoff a:hover{
+    background-color:#fff;
+    color:#EA7E0D;
+    border-color:#EA7E0D;
+}
+
+.featured a:hover{
     background-color:#474647;
     color:#fff;
     border-color:#474647;
@@ -833,7 +855,7 @@ section, section > div, .pagination, .pagination > div, section.whatProject, .fo
         margin-left:0;
     }
 
-    .me .pageTitle, .contact .pageTitle, .sendoff .pageTitle{
+    .me .pageTitle, .contact .pageTitle{
         margin-top:150px;
     }
 
@@ -1174,7 +1196,7 @@ section, section > div, .pagination, .pagination > div, section.whatProject, .fo
 @media(min-height: 920px){
     /* Tall Screen size ***********************************************************/
     /* T */
-    .me .pageTitle, .contact .pageTitle, .sendoff .pageTitle{
+    .me .pageTitle, .contact .pageTitle{
         margin-top:300px;
     }
 }
@@ -1182,7 +1204,7 @@ section, section > div, .pagination, .pagination > div, section.whatProject, .fo
 @media(min-height: 1100px){
     /* Extra Tall Screen size *****************************************************/
     /* ET */
-    .me .pageTitle, .contact .pageTitle, .sendoff .pageTitle{
+    .me .pageTitle, .contact .pageTitle{
         margin-top:400px;
     }
 }
