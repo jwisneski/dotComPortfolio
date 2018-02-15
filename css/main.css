@@ -187,17 +187,17 @@ section.miniBag, section.imageMatters{
 section.miniBag{
     background-color:#235789;
 
-    background-size:cover;
+    /* background-size:cover;
     background-position:center;
-    background-image:url('https://jwisneski.github.io/portfolio/images/MapSliceMilwaukee.jpg');
+    background-image:url('https://jwisneski.github.io/portfolio/images/MapSliceMilwaukee.jpg'); */
 }
 
 section.imageMatters{
     background-color:#1F76DB;
 
-    background-size:cover;
+    /* background-size:cover;
     background-position:center;
-    background-image:url('https://jwisneski.github.io/portfolio/images/MapSliceIndy.jpg');
+    background-image:url('https://jwisneski.github.io/portfolio/images/MapSliceIndy.jpg'); */
 }
 
 section.savings, section.nationwide{
