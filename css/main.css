@@ -186,18 +186,10 @@ section.miniBag, section.imageMatters{
 
 section.miniBag{
     background-color:#235789;
-
-    /* background-size:cover;
-    background-position:center;
-    background-image:url('https://jwisneski.github.io/portfolio/images/MapSliceMilwaukee.jpg'); */
 }
 
 section.imageMatters{
     background-color:#1F76DB;
-
-    /* background-size:cover;
-    background-position:center;
-    background-image:url('https://jwisneski.github.io/portfolio/images/MapSliceIndy.jpg'); */
 }
 
 section.savings, section.nationwide{
@@ -254,9 +246,9 @@ a.external p:hover{
 }
 
 .sendoff a{
-    background-color:#EA7E0D;
-    color:#fff;
-    border-color:#EA7E0D;
+    background-color: #EA7E0D;
+    color: #fff;
+    border-color: #EA7E0D;
 }
 
 .sendoff a:hover{
@@ -855,7 +847,7 @@ section, section > div, .pagination, .pagination > div, section.whatProject, .fo
         margin-left:0;
     }
 
-    .me .pageTitle, .contact .pageTitle{
+    .me .pageTitle, .contact .pageTitle, .sendoff .PageTitle{
         margin-top:150px;
     }
 
