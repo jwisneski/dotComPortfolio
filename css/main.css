@@ -160,12 +160,8 @@ a:hover{
 }
 
 .miniBag .pageTitle, .imageMatters .pageTitle{
-    flex-direction:row;
-    align-items: center;
-    justify-content: center;
-    width:100%;
-    margin-bottom:30px;
-    margin-top:50px;
+    width:60%;
+    align-self:center;
 }
 
 .me .pageTitle, .contact .pageTitle{
@@ -1143,6 +1139,15 @@ section, section > div, .pagination, .pagination > div, section.whatProject, .fo
 
     .indyWork{
         order:0;
+    }
+
+    .miniBag .pageTitle, .imageMatters .pageTitle{
+        flex-direction:row;
+        align-items: center;
+        justify-content: center;
+        width:100%;
+        margin-bottom:30px;
+        margin-top:50px;
     }
 }
 
