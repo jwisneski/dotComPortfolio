@@ -825,6 +825,84 @@ section, section > div, .pagination, .pagination > div, section.whatProject, .fo
     cursor:pointer;
 }
 
+.whatIdo{
+    justify-content: space-around;
+    background-color:#fff;
+    padding-top:100px;
+    padding-bottom:85px;
+}
+
+.whatIdo div{
+    width:90%;
+    height:90vw;
+    background-color:#fff;
+
+    background-size:contain;
+    background-position:center;
+
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/*remove this when the photos are ready*/
+.leadWork, .indyWork{
+    height:50px !important;
+    margin-bottom:0 !important;
+}
+
+.indyWork, .portrait{
+    margin-bottom:50px;
+}
+
+.leadWork{
+    order:2;
+    /* background-image:url('https://jwisneski.github.io/portfolio/images/MapSliceDarkGreyOptimized.jpg'); */
+    /* background-image:url('../images/process.png'); */
+    background-repeat:no-repeat;
+    vertical-align: middle;
+}
+
+.portrait{
+    border-radius:100%;
+    background-image:url('https://jwisneski.github.io/portfolio/images/portrait.jpg');
+    /* background-image:url('../images/portrait.jpg'); */
+
+    order:0;
+}
+
+.indyWork{
+    order:1;
+    /* background-image:url('https://jwisneski.github.io/portfolio/images/MapSliceDarkGreyOptimized.jpg'); */
+    /*background-image:url('../images/process.png');*/
+    background-repeat:no-repeat;
+    vertical-align: middle;
+}
+
+/* unremove this when photos are ready*/
+/* .leadWork::after{
+    content:'and a UX Lead at Nationwide';
+    position:relative;
+    top:100%;
+} */
+
+/* .indyWork::after{
+    content:"I'm an Experience Designer";
+    position:relative;
+    top:100%;
+} */
+
+.statement{
+    flex-direction:row;
+    align-items: center;
+    justify-content: center;
+}
+
+.hobbies{
+    display:none;
+}
+
 /*.fadeUp{
     margin-top:20px;
     opacity:0;
@@ -1044,9 +1122,28 @@ section, section > div, .pagination, .pagination > div, section.whatProject, .fo
         flex-direction:row;
         justify-content: space-around;
     }
-}
 
-@media(min-width:850px){
+    .whatIdo{
+        flex-direction:row;
+    }
+
+    .whatIdo div{
+        width:30%;
+        height:30vw;
+        margin:0 !important;
+    }
+
+    .leadWork{
+        order:2;
+    }
+
+    .portrait{
+        order:1;
+    }
+
+    .indyWork{
+        order:0;
+    }
 }
 
 @media(min-width: 1000px){
