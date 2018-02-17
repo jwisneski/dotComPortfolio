@@ -59,6 +59,24 @@ h1.bold{
     font-weight:500;
 }
 
+input.email{
+    font-size:100px;
+    font-size:10vw;
+    font-weight:500;
+    margin-top:20px;
+    margin-bottom:0;
+    align-self:flex-start;
+    cursor:default;
+    width:81vw;
+    border: none;
+    border-color: transparent;
+}
+
+input.email::selection {
+    color:#fff;
+    background-color:#1F76DB;
+}
+
 h2{ /* need a smaller screen version to scale (probably)*/
     font-size:20px;
     font-size:6vw;
