@@ -162,7 +162,7 @@ function toggleContact(shown, newSection){
         $('.contact').addClass('contactShown');
         changeTitle('Talk to Joel', '#contact');
 
-        $('.emailPlaceholder').select( );
+       $('input.email').select( );
 
         //this has to be old section to register properly in the pageScroll function
         oldSection='contact';
