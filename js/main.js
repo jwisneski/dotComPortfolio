@@ -163,6 +163,7 @@ function toggleContact(shown, newSection){
         changeTitle('Talk to Joel', '#contact');
 
         $('input.email').select( );
+        $('input.email').focus( );
         $('input.email')[0].setSelectionRange(0, 9999);
 
         //this has to be old section to register properly in the pageScroll function
