@@ -36,7 +36,7 @@ function getScrollPositions(){
                 var valueName=50;
             }else{
                 var valueName='section.' + valueName;
-                var valueName=$(valueName).offset().top-70;
+                var valueName=$(valueName).offset().top-50;
             }
 
             //if it's a valid number add to the dictionary
@@ -163,8 +163,6 @@ function toggleContact(shown, newSection){
         changeTitle('Talk to Joel', '#contact');
 
         $('input.email').select( );
-        $('input.email').focus( );
-        $('input.email')[0].setSelectionRange(0, 9999);
 
         //this has to be old section to register properly in the pageScroll function
         oldSection='contact';
@@ -182,17 +180,26 @@ function toggleContact(shown, newSection){
 
 function toggleProject(element){
     if(element!=''){
+        element=element.replace('Link','');
         project=element;
+
+        // get the screen position
+        stop = Math.round($(window).scrollTop());
+
         // display appropriate content? or fade in/slide up one by one?
         //show project container (slide up)
-        $('section.'+ project).addClass('projectContainerShown');
+        $('.projectContainer.'+project+'Project').addClass('projectContainerShown');
+        $('.upArrow').addClass('upArrowShown');
+
+        // set 'top' of shown class to scroll position with absolute position
+        //$('.projectContainerShown').css('top', stop + 'px');
 
         // get the right project container
         var projectName=document.querySelector('section.projectContainer.' + project);
 
         // get all children from project container and add them to an array
-        var sectionParkingLot=projectName.children;
-        var sectionList=Array.from(sectionParkingLot);
+        //var sectionParkingLot=projectName.children;
+        //var sectionList=Array.from(sectionParkingLot);
 
         // var descendants = projectName.querySelectorAll('*');
         // for (i = 0; i < descendants.length; i++) {
@@ -208,9 +215,9 @@ function toggleProject(element){
         // }
 
         // format and change page link
-        var linkName = projectName.className.split(' ')[1];
-        projectName=projectName.getAttribute('data-section-name');
-        changeTitle(projectName, '#'+linkName);
+        //var linkName = projectName.className.split(' ')[1];
+        //projectName=projectName.getAttribute('data-section-name');
+        //changeTitle(projectName, '#'+linkName);
 
         //this has to be old section to register properly in the pageScroll function
         oldSection=project;
@@ -222,6 +229,7 @@ function toggleProject(element){
         // close contact
         pageScroll( );
         $('.projectContainer').removeClass('projectContainerShown');
+        $('.upArrow').removeClass('upArrowShown');
         project='';
 
         $('body').removeClass('hideOverflow');
@@ -277,53 +285,6 @@ function updateEmailText( ){
         $('.contact h2').html('Press and hold to copy');
     }else if(browser=='Windows'){
         $('.contact h2').html('CTRL + C to copy');
-    }
-}
-
-function updateBannerText(lastProject, scrollingUp){
-    var headline;
-    var subhead;
-
-    var headlines=['Nationwide Mobile App',
-                            'The Savings Launcher',
-                            'The Kohl&#8217;s Mini Bag',
-                            'ImageMatters Website'];
-
-    var subheads=['One app for all your sides',
-                            'Discounts without the Kohl&#8217;s Math',
-                            'It&#8217;s dangerous to go alone &comma take this',
-                            'A modern website for a growing company'];
-
-    var images=[ ]
-
-    if(scrollingUp){
-        // Project that was clicked on
-        var h4 = '.continueBanner h4';
-        var h2 = '.continueBanner h2';
-        //var image='.continueBanner .projectImage';
-
-        $(h4).html(headlines[lastProject]);
-        $(h2).html(subheads[lastProject]);
-        //$(image).css('background-image', images[lastProject]);
-
-    }else{
-        // next project
-        var h4 = '.nextBanner h4';
-        var h2 = '.nextBanner h2';
-        //var image='.nextBanner .projectImage';
-
-        if((lastProject+1)<=headlines.length){
-            // if there is a "next"
-            $(h4).html(headlines[lastProject+1]);
-            $(h2).html(subheads[lastProject+1]);
-            //$(image).css('background-image', images[lastProject+1]);
-
-        }else{
-            // else wrap
-            $(h4).html(headlines[0]);
-            $(h2).html(subheads[0]);
-            //$(image).css('background-image', images[0]);
-        }
     }
 }
 
@@ -486,6 +447,9 @@ $(document).ready(function () {
             text = document.selection.createRange().text;
         }
 
+        // remove any white space
+        text.replace(/\s/g,'');
+
         // check if email is selected
         if(text=='Hi@Joelski.design'){
             $('.contact h2').removeClass('hideCopy');
@@ -548,7 +512,41 @@ $(document).ready(function () {
         toggleContact(contact, newSection);
     });
 
-    $('.projects div').on('click tap', function(e){
+    $('a.savingsLink').on('click tap', function(e){
+        if(e.currentTarget.className=='nounProject'){
+            window.open('https://thenounproject.com/joelski/', '_blank');
+        }else{
+            //get class name of project clicked
+            var element=e.currentTarget;
+            var element=element.className.split(' ')[0];
+            toggleProject(element);
+        }
+    });
+
+    $('a.miniBagLink').on('click tap', function(e){
+        if(e.currentTarget.className=='nounProject'){
+            window.open('https://thenounproject.com/joelski/', '_blank');
+        }else{
+            //get class name of project clicked
+            var element=e.currentTarget;
+            var element=element.className.split(' ')[0];
+            toggleProject(element);
+        }
+    });
+
+    $('a.nationwideAppLink').on('click tap', function(e){
+        if(e.currentTarget.className=='nounProject'){
+            window.open('https://thenounproject.com/joelski/', '_blank');
+        }else{
+            //get class name of project clicked
+            var element=e.currentTarget;
+            var element=element.className.split(' ')[0];
+            toggleProject(element);
+        }
+    });
+
+    $('a.imageMattersLink').on('click tap', function(e){
+        console.log(e);
         if(e.currentTarget.className=='nounProject'){
             window.open('https://thenounproject.com/joelski/', '_blank');
         }else{
