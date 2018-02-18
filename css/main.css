@@ -10,20 +10,20 @@
     padding:0;
 
     /* quick functional transition for hovers, etc. */
-    -ms-transition:all .2s ease;
-    -moz-transition:all .2s ease;
-    -webkit-transition:all .2s ease;
-    -o-transition:all .2s ease;
-    transition:all .2s ease;
+    -ms-transition:all .3s ease;
+    -moz-transition:all .3s ease;
+    -webkit-transition:all .3s ease;
+    -o-transition:all .3s ease;
+    transition:all .3s ease;
 }
 
 .contact, .projectContainer{
     /* slower functional transition for larger moving elements */
-    -ms-transition:all .4s ease;
-    -moz-transition:all .4s ease;
-    -webkit-transition:all .4s ease;
-    -o-transition:all .4s ease;
-    transition:all .4s ease;
+    -ms-transition:all .5s ease;
+    -moz-transition:all .5s ease;
+    -webkit-transition:all .5s ease;
+    -o-transition:all .5s ease;
+    transition:all .5s ease;
 }
 
 html{
@@ -44,9 +44,9 @@ html{
 }
 
 h1{
-    font-size:80px;
-    font-size:8vw;
-    font-weight:200;
+    font-size:60px;
+    font-size:6vw;
+    font-weight:400;
     margin-top:20px;
     margin-bottom:0;
     align-self:flex-start;
@@ -59,7 +59,7 @@ h1.bold{
     font-weight:500;
 }
 
-input.email{
+textarea.email{
     font-size:100px;
     font-size:10vw;
     font-weight:500;
@@ -72,37 +72,97 @@ input.email{
     border-color: transparent;
 }
 
-input.email::selection {
+h1::selection{
     color:#fff;
     background-color:#1F76DB;
+}
+
+.me h1::selection{
+    color:#1F76DB;
+    background-color:transparent;
+}
+
+.miniBag h1::selection{
+    color:#235789;
+    background-color:#fff;
+}
+
+.imageMatters h1::selection{
+    color:#1F76DB;
+    background-color:#fff;
+}
+
+h1 > span{
+    font-size:30px;
+    font-size:3vw;
+    font-weight:400;
+
+    line-height:10px;
+    line-height:1vw;
 }
 
 h2{ /* need a smaller screen version to scale (probably)*/
     font-size:20px;
     font-size:6vw;
-    font-weight:400;
-    margin-top:0;
-    margin-bottom:20px;
+    font-weight:300;
+    margin-top:20px;
+    margin-bottom:0;
     align-self:flex-start;
 
     cursor:default;
 }
 
 h2.bold{
-    font-weight:300;
-}
-
-h2 span{
-    display:block;
-    font-size:16px;
-    font-size:4vw;
     font-weight:200;
 }
 
-h3{
+h2::selection {
+    color:#fff;
+    background-color:#EA7E0D;
+}
+
+.me h2::selection{
+    color:#EA7E0D;
+    background-color:transparent;
+}
+
+.miniBag h2::selection{
+    color:#235789;
+    background-color:#efefef;
+}
+
+.imageMatters h2::selection{
+    color:#1F76DB;
+    background-color:#efefef;
+}
+
+.projectContainer h2{
     font-size:18px;
-    font-size:4vw;
+    font-size:2vw;
     font-weight:400;
+}
+
+h3{
+    font-size:40px;
+    font-size:8vw;
+    font-weight:500;
+    align-self:flex-start;
+    cursor:default;
+}
+
+h3::selection{
+    color:#fff;
+    background-color:#1F76DB;
+}
+
+.miniBag h3::selection{
+    color:#235789;
+    background-color:#efefef;
+}
+
+.imageMatters h3::selection{
+    color:#1F76DB;
+    background-color:#efefef;
 }
 
 p{
@@ -112,6 +172,21 @@ p{
     cursor:default;
     line-height: 25px;
     line-height:7vw;
+}
+
+p::selection, div::selection, span::selection{
+    color:#fff;
+    background-color:#235789;
+}
+
+.miniBag p::selection, .miniBag div::selection, .miniBag span::selection{
+    color:#235789;
+    background-color:#fff;
+}
+
+.imageMatters p::selection, .imageMatters div::selection, .imageMatters span::selection{
+    color:#1F76DB;
+    background-color:#fff;
 }
 
 label{
@@ -134,7 +209,7 @@ a{
 
     /* adds the 2010's affordances */
     padding:10px;
-    width:250px;
+    width:90vw;
 
     /* used to make links expand from the center */
     line-height:30px;
@@ -145,6 +220,16 @@ a{
     font-weight:300;
 
     border:2px solid #fff;
+    align-self:center;
+    left:auto;
+    right:auto;
+    margin:0;
+
+    position:absolute;
+    align-self:center;
+    top:200px;
+
+    letter-spacing: 2px;
 }
 
 a:hover{
@@ -173,8 +258,9 @@ a:hover{
     margin-right:10px;
 }
 
-.savings .pageTitle, .nationwide .pageTitle{
-    width:60%;
+.me .pageTitle, .sendoff .pageTitle, .contact .pageTitle{
+    height:calc(100% - 150px);
+    padding-top:150px;
 }
 
 .miniBag .pageTitle, .imageMatters .pageTitle{
@@ -182,8 +268,8 @@ a:hover{
     align-self:center;
 }
 
-.me .pageTitle, .contact .pageTitle{
-    margin-top:100px;
+.projectPreview .pageTitle{
+    margin-top:30px;
 }
 
 section.savings, section.nationwide, section.miniBag, section.imageMatters{
@@ -191,6 +277,7 @@ section.savings, section.nationwide, section.miniBag, section.imageMatters{
     flex-direction:row;
     justify-content: center;
     align-items: flex-start;
+    padding-bottom:100px;
 }
 
 section.miniBag, section.imageMatters{
@@ -199,15 +286,24 @@ section.miniBag, section.imageMatters{
 }
 
 section.miniBag{
-    background-color:#235789;
+    background-color:#CB187C;
 }
 
 section.imageMatters{
-    background-color:#1F76DB;
+    background-color:#00247D;
+    color:#fff;
 }
 
-section.savings, section.nationwide{
+section.savings{
     margin-top:100px;
+}
+
+ section.nationwide{
+     margin-top:0;
+ }
+
+section.featured{
+    padding-bottom:50px;
 }
 
 /* End Page title overrides ********/
@@ -229,7 +325,13 @@ a.external p:hover{
 .me a, .contact a, .featured a, .sendoff a{
     align-self:center;
     margin:auto;
-    margin-top:150px;
+    bottom:0;
+    top:auto;
+}
+
+.me a::selection{
+    background-color:#474647;
+    color:#fff;
 }
 
 .me a, .contact a{
@@ -240,6 +342,16 @@ a.external p:hover{
 .contact a{
     border-color:#474647;
     background-color:#474647;
+    color:#fff;
+}
+
+.contact a::selection{
+    background-color:#fff;
+    color:#474647;
+}
+
+.featured a::selection{
+    background-color:#EA7E0D;
     color:#fff;
 }
 
@@ -254,15 +366,21 @@ a.external p:hover{
 }
 
 .featured a{
-    background-color:#fff;
-    color:#474647;
+    background-color:#474647;
+    color:#fff;
     border-color:#474647;
+    bottom:-50px;
 }
 
 .sendoff a{
     background-color: #EA7E0D;
     color: #fff;
     border-color: #EA7E0D;
+}
+
+.sendoff a::selection{
+    background-color:#EA7E0D;
+    color:#fff;
 }
 
 .sendoff a:hover{
@@ -272,47 +390,77 @@ a.external p:hover{
 }
 
 .featured a:hover{
-    background-color:#474647;
-    color:#fff;
+    background-color:#fff;
+    color:#474647;
     border-color:#474647;
 }
 
-.savings a, .nationwide a{
-    background-color:#EA7E0D;
+.savings a, .miniBag a, .nationwide a, .imageMatters a{
+    top:auto;
+    bottom:-50px;
     color:#fff;
-    border-color:#EA7E0D;
-    margin-bottom:20px;
 }
 
-.savings a:hover, .nationwide a:hover{
-    background-color:#fff;
-    color:#EA7E0D;
-    border-color:#EA7E0D;
+.savings a{
+    border-color:#00AD46;
+    background-color:#00AD46;
 }
 
-.miniBag a, .imageMatters a{
+.savings a:hover{
+    border-color:#00AD46;
     background-color:#fff;
-    border-color:#fff;
+    color:#00AD46;
 }
 
 .miniBag a{
-    color:#235789;
-}
-
-.imageMatters a{
-    color:#1F76DB;
-}
-
-.miniBag a:hover, .imageMatters a:hover{
-    color:#fff;
+    border-color:#fff;
+    background-color:#fff;
+    color:#CB187C;
+    position:relative;
 }
 
 .miniBag a:hover{
-    background-color:#235789;
+    background-color:#CB187C;
+    color:#fff;
+}
+
+.nationwide a{
+    border-color:#0072CF;
+    background-color:#0072CF;
+}
+
+.nationwide a:hover{
+    border-color:#0072CF;
+    background-color:#fff;
+    color:#0072CF;
+}
+
+.imageMatters a{
+    border-color:#fff;
+    background-color:#fff;
+    color:#00247D;
+    position:relative;
 }
 
 .imageMatters a:hover{
+    border-color:#F2C924;
+    background-color:#F2C924;
+    color:#fff;
+}
+
+.savings a::selection, .nationwide a::selection{
+    background-color:#EA7E0D;
+    color:#fff;
+}
+
+.miniBag a::selection{
+    background-color:#235789;
+    color:#fff;
+}
+
+.imageMatters a::selection{
     background-color:#1F76DB;
+    color:#fff;
 }
 
 .me a:hover{
@@ -334,7 +482,7 @@ a.toExternal{
 /* End Page Link overrides ******************/
 
 section, section > div, .pagination, .pagination > div, section.whatProject, .footer section,
-.projects > div, .close, .projectInfo, .projectInfo div{
+.projects > div, .close, .projectInfo, .projectInfo div, .mobileSection, .mobileContent{
     display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
     display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
     display: -ms-flexbox;      /* TWEENER - IE 10 */
@@ -386,7 +534,6 @@ section, section > div, .pagination, .pagination > div, section.whatProject, .fo
 /* End page section overrides **************/
 
 .content{
-    align-self:flex-start;
     width:90%;
     margin-top:50px;
     margin-bottom:50px;
@@ -491,18 +638,27 @@ section, section > div, .pagination, .pagination > div, section.whatProject, .fo
     display:none;
 
     margin-left:5%;
-    max-height:500px;
+    max-height:510px;
     margin-top:50px;
+}
+
+/* Needs to be changed for small screens*/
+.savingsProject .mobileProject, .nationwideAppProject .mobileProject{
+    margin-left:0;
+    max-height:none;
+    min-width:340px;
+    min-height:708px;
 }
 
 .desktopProject{
     width:100%;
     height:auto;
+    position:relative;
 
     display:none;
 }
 
-.miniBag .desktopProject{
+.miniBag .desktopProject, .miniBagProject .desktopProject{
     background-image:url('https://jwisneski.github.io/portfolio/images/BatmanVSuperman.jpg');
     /*background-image:url('../images/BatmanVSuperman.jpg');*/
     background-size:cover;
@@ -510,9 +666,11 @@ section, section > div, .pagination, .pagination > div, section.whatProject, .fo
 
     height:80%;
     height:80vh;
+
+    border-top:2px solid #474647;
 }
 
-.imageMatters .desktopProject{
+.imageMatters .desktopProject, .imageMattersProject .desktopProject{
     background-image:url('https://jwisneski.github.io/portfolio/images/imHomeC.jpg');
     /* background-image:url('../images/imHomeC.jpg'); */
     background-size:cover;
@@ -520,29 +678,38 @@ section, section > div, .pagination, .pagination > div, section.whatProject, .fo
 
     height:70%;
     height:70vh;
+
+    border-top:2px solid #474647;
 }
 
-.nationwide .mobileProject{
-    background-color:#efefef
+.nationwide .mobileProject, .nationwideAppProject .mobileProject{
+    background-color:#efefef;
 }
 
 .mobileProject > .screen{
     width:100%;
-    height:100%;
+    height:60%;
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-position:top center;
 }
 
 .nationwideScreen{
     background-image:url('https://jwisneski.github.io/portfolio/images/NWIDCard.jpg');
     /*background-image:url('../images/NWIDCard.jpg');*/
-    background-size:cover;
-    background-position:top center;
+}
+
+.nationwideAppProject .nationwideScreen{
+    background-size:contain;
 }
 
 .savingsLauncherScreen{
     background-image:url('https://jwisneski.github.io/portfolio/images/savingsLauncherOn.jpg');
     /*background-image:url('../images/savingsLauncherOn.jpg');*/
-    background-size:cover;
-    background-position:top center;
+}
+
+.savingsProject .savingsLauncherScreen{
+    background-size:contain;
 }
 
 .projectInfo{
@@ -550,14 +717,16 @@ section, section > div, .pagination, .pagination > div, section.whatProject, .fo
     width:100%;
     flex-direction:row;
     align-self:flex-start;
+    margin-top:50px;
     margin-bottom:50px;
     flex-wrap:wrap;
+    justify-content:flex-start;
 }
-/*
-.miniBag .projectInfo{
-    width:50%;
-    align-self:center;
-} */
+
+.titleContainer{
+    margin-left:20px;
+    margin-right:20px;
+}
 
 .timeframe, .role{
     min-width:auto;
@@ -565,18 +734,26 @@ section, section > div, .pagination, .pagination > div, section.whatProject, .fo
 }
 
 .projectInfo .title{
-    font-weight:400;
+    font-weight:200;
+    font-size:18px;
+    line-height:20px;
 }
 
 .projectInfo .main{
-    font-weight:200;
-    font-size:50px;
-    font-size:5vh;
-    line-height:6vh;
+    line-height:5px;
+    font-weight:400;
+    font-size:40px;
+    font-size:8vw;
+    line-height:50px;
+    line-height:10vw;
 }
 
 .projectInfo, .secondary{
+    font-weight:200;
+}
 
+.secondary span{ /*denotes an "and"*/
+    font-weight:400;
 }
 
 /* End how content overrides **************/
@@ -725,25 +902,32 @@ section, section > div, .pagination, .pagination > div, section.whatProject, .fo
     background-color:#fff;
     color:#000;
     position:fixed;
-    top:-100%;
+    top:-120%;
 
     width:100%;
     height:100%;
+    border-bottom:1px solid #474647;
 }
 
 .projectContainer{
-    top:100%;
-    overflow-y:hidden;
+    top:120%;
+    height:calc(100% + 50px);
+    height:auto;
+    overflow:scroll;
     -webkit-overflow-scrolling: touch;
+
+    border-top:1px solid #474647;
+    border-bottom:0px;
 }
 
 .contactShown, .projectContainerShown{
     top:0;
+    bottom:0;
 }
 
 .overlayContainer{
     position:fixed;
-    top:100%;
+    top:120%;
     width:100%;
     height:100%;
 }
@@ -759,20 +943,24 @@ section, section > div, .pagination, .pagination > div, section.whatProject, .fo
     color:#000;
 
     position:absolute;
-    bottom:90px;
-    left:25px;
-    align-items: flex-start;
-    justify-content: flex-start;
+    bottom:20px;
+    align-items: center;
+    align-self:center;
+    justify-content: flex-end;
 
-    font-weight:400;
+    font-weight:500;
 }
 
 .footer > p{
     margin-bottom:0;
-    line-height:25px;
-    line-height:7vw;
-    font-size:18px;
-    font-size:4.5vw;
+    line-height:20px;
+    line-height:6vw;
+    font-size:16px;
+    font-size:4vw;
+}
+
+.footer > p > span{
+    font-weight:200;
 }
 
 /* End Footer *********************************/
@@ -781,7 +969,8 @@ section, section > div, .pagination, .pagination > div, section.whatProject, .fo
     width:50px;
     height:50px;
     padding:10px;
-    position:relative;
+    top:50px;
+    right:50px;
 }
 
 .downArrow:hover, .downArrow.hovered{
@@ -790,14 +979,25 @@ section, section > div, .pagination, .pagination > div, section.whatProject, .fo
     cursor:pointer;
 }
 
-.upArrow:hover, .upArrowHovered{
-    /*-ms-transform: rotate(90deg);
+.upArrow{
+    -ms-transform: rotate(180deg);
     -ms-transform-origin: center;
-    -webkit-transform: rotate(90deg); /* Chrome, Safari, Opera */
-    /*-webkit-transform-origin: center; /* Chrome, Safari, Opera */
-    /*transform: rotate(90deg);
-    transform-origin:  center;*/
+    -webkit-transform: rotate(180deg); /* Chrome, Safari, Opera */
+    -webkit-transform-origin: center; /* Chrome, Safari, Opera */
+    transform: rotate(180deg);
+    transform-origin:  center;
+    display:none;
+    position:fixed;
+}
+
+.upArrow:hover, .upArrowHovered{
+    padding-top:20px;
+    margin-bottom:-10px;
     cursor:pointer;
+}
+
+.upArrowShown{
+    display:block;
 }
 
 .downArrow .light{
@@ -843,7 +1043,6 @@ section, section > div, .pagination, .pagination > div, section.whatProject, .fo
     justify-content: space-around;
     background-color:#fff;
     padding-top:100px;
-    padding-bottom:85px;
 }
 
 .whatIdo div{
@@ -911,10 +1110,37 @@ section, section > div, .pagination, .pagination > div, section.whatProject, .fo
     flex-direction:row;
     align-items: center;
     justify-content: center;
+    margin-bottom:100px;
+}
+
+.statement .content{
+    align-self:center !important;
 }
 
 .hobbies{
     display:none;
+}
+
+.mobileSection{
+    flex-direction:row;
+    align-items: flex-start;
+    width:100%;
+    height:auto;
+    min-height:100%;
+}
+
+.mobileSection.centered{
+    justify-content: center;
+}
+
+.mobileContent{
+    margin-top:100px;
+    justify-content: flex-start;
+}
+
+.mobileContent .role{
+    margin-top:20px;
+    flex-basis:50%;
 }
 
 /*.fadeUp{
@@ -928,7 +1154,8 @@ section, section > div, .pagination, .pagination > div, section.whatProject, .fo
     /*extra small short screen iPhone 4 mostly*/
     /* XSS */
     .me a, .contact a, .featured a, .sendoff a{
-        margin-top:110px !important;
+        bottom:0;
+        top:auto;
     }
 }
 
@@ -939,12 +1166,8 @@ section, section > div, .pagination, .pagination > div, section.whatProject, .fo
         margin-left:0;
     }
 
-    .me .pageTitle, .contact .pageTitle, .sendoff .PageTitle{
-        margin-top:150px;
-    }
-
-    .me a, .contact a, .featured a, .sendoff a{
-        margin-top:200px;
+    .featured a{
+        bottom:-50px;
     }
 
     .blurEffect{
@@ -965,8 +1188,11 @@ section, section > div, .pagination, .pagination > div, section.whatProject, .fo
         background-color:rgba(225, 225, 225, .2);
     }
 
-    .footer{
-        bottom:100px;
+    .footer > p{
+        line-height:20px;
+        line-height:5vw;
+        font-size:16px;
+        font-size:3vw;
     }
 }
 
@@ -982,7 +1208,18 @@ section, section > div, .pagination, .pagination > div, section.whatProject, .fo
         line-height:3vw;
     }
 
+    .content{
+        align-self:flex-start;
+        width:100%;
+        margin-top:50px;
+        margin-bottom:100px;
+    }
+
     a{
+        width:300px;
+        align-self:inherit;
+        position:inherit;
+        top:auto;
         line-height:40px;
         font-size:25px;
     }
@@ -1002,14 +1239,9 @@ section, section > div, .pagination, .pagination > div, section.whatProject, .fo
         font-size:2vw;
     }
 
-    h2.openToJobs{
-        font-weight:300;
-        font-size:2vw;
-    }
-
     h3{
-        font-size:20px;
-        font-size:2vw;
+        font-size:40px;
+        font-size:4vw;
         font-weight:400;
         margin-bottom:30px;
     }
@@ -1034,18 +1266,48 @@ section, section > div, .pagination, .pagination > div, section.whatProject, .fo
         display:block;
     }
 
+    .savingsProject .mobileProject, .nationwideAppProject .mobileProject{
+        border-bottom:2px solid;
+        border-radius:30px;
+        align-self:flex-start;
+        min-width:340px;
+        min-height:708px;
+    }
+
     .mobileProject > .screen{
         background-color:white;
         width:95%;
-        height:90%;
+        height:calc(100% - 70px);
         margin-left:calc(2.5% - 2px);
-        margin-top:20%;
+        margin-top:70px;
         border:2px solid #000;
+    }
+
+    .savingsProject .mobileProject > .screen, .nationwideAppProject .mobileProject >.screen{
+        height:calc(100% - 140px);
     }
 
     .desktopProject{
         height:100%;
         display:block;
+    }
+
+    section.savings, section.miniBag, section.nationwide, section.imageMatters{
+        padding-bottom:0;
+    }
+
+    section.miniBag{
+        background-color:#fff;
+        color:#000;
+    }
+
+    section.nationwide{
+        padding-top:250px;
+    }
+
+    section.imageMatters{
+        background-color:#fff;
+        color:#000;
     }
 
     .me a, .contact a, .featured a, .sendoff a{
@@ -1054,47 +1316,37 @@ section, section > div, .pagination, .pagination > div, section.whatProject, .fo
         margin:0;
     }
 
-    .who a, .what a, .how a, .why a{
-        right:20px;
-        bottom:20px;
+    .savings a, .nationwide a{
+        align-self:flex-start;
     }
 
-    .who .resumeBtn{
-        bottom:auto;
-        display:inline-block;
-        left:0;
-        position:relative;
-        margin-top:20px;
+    .miniBag a{
+        border-color:#CB187C;
+        background-color:#CB187C;
+        color:#fff;
+        margin-top:-30px;
     }
 
-    .content{
-        width:100%;
-        margin-top:50px;
-        margin-bottom:100px;
+    .miniBag a:hover{
+        color:#CB187C;
+        background-color:#fff;
     }
 
-    .what a.transition{
-        position:inherit;
-        right:0;
-        bottom:200px;
+    .imageMatters a{
+        border-color:#C3AC0F;
+        background-color:#C3AC0F;
+        color:#fff;
+        margin-top:-30px;
     }
 
-    .what span{
-        display:none;
+    .imageMatters a:hover{
+        border-color:#C3AC0F;
+        background-color:#fff;
+        color:#C3AC0F;
     }
 
-    .pagination{
-        top:45%;
-        right:20px;
-    }
-
-    .pagination > div{
-        margin-top:5px;
-    }
-
-    .dot{
-        min-width:10px;
-        min-height:10px;
+    .featured a{
+        bottom:0;
     }
 
     .contact p{
@@ -1123,12 +1375,14 @@ section, section > div, .pagination, .pagination > div, section.whatProject, .fo
     .footer{
         bottom:25px;
         left:20px;
+        align-items: flex-start;
+        text-align: left;
     }
 
     .footer > p{
-        font-size:18px;
+        font-size:16px;
         font-size:2vw;
-        line-height:25px;
+        line-height:20px;
         line-height:3vw;
     }
 
@@ -1139,6 +1393,10 @@ section, section > div, .pagination, .pagination > div, section.whatProject, .fo
 
     .whatIdo{
         flex-direction:row;
+    }
+
+    .statement{
+        margin-bottom:0;
     }
 
     .whatIdo div{
@@ -1159,6 +1417,10 @@ section, section > div, .pagination, .pagination > div, section.whatProject, .fo
         order:0;
     }
 
+    .savings .pageTitle, .nationwide .pageTitle{
+        width:60%;
+    }
+
     .miniBag .pageTitle, .imageMatters .pageTitle{
         flex-direction:row;
         align-items: center;
@@ -1166,6 +1428,25 @@ section, section > div, .pagination, .pagination > div, section.whatProject, .fo
         width:100%;
         margin-bottom:30px;
         margin-top:50px;
+    }
+
+    .projectInfo{
+        margin-bottom: -20px;
+    }
+
+    .role{
+        margin-right:50px;
+    }
+
+    .timeframe{
+        margin-right:50px;
+    }
+
+    .projectInfo .main{
+        font-size:30px;
+        font-size:3vw;
+        line-height:30px;
+        line-height:4vw;
     }
 }
 
@@ -1204,13 +1485,15 @@ section, section > div, .pagination, .pagination > div, section.whatProject, .fo
     }
 
     .footer{
-        bottom:40px;
-        left:50px;
+        bottom:20px;
+        left:70px;
     }
 
     .footer > p{
-        font-size:18px;
-        font-size:1.5vw;
+        line-height:20px;
+        line-height:1.7vw;
+        font-size:16px;
+        font-size:1.2vw;
     }
 
     .projectContent p{
@@ -1220,6 +1503,21 @@ section, section > div, .pagination, .pagination > div, section.whatProject, .fo
 
     .mobileProject{
         margin-right:50px;
+    }
+
+    .projectInfo{
+        margin-bottom: 0px;
+    }
+
+    .projectInfo .main{
+    }
+
+    .timeframe, .role{
+        margin-right:80px;
+    }
+
+    .projectInfo .title{
+        line-height:35px;
     }
 }
 
@@ -1231,12 +1529,67 @@ section, section > div, .pagination, .pagination > div, section.whatProject, .fo
     .close{
         /*top:50px;*/
     }
+
+    .timeframe{
+        margin-right:120px;
+    }
+
+    .projectInfo .main{
+        line-height:40px;
+        line-height:3vw;
+        font-size: 30px;
+        font-size: 2.5vw;
+    }
+
 }
 
-@media(min-width:1400px){
+@media(min-width:1620px){
+    .me{
+        max-height:90vh;
+    }
+
+    a{
+        padding:10px;
+        width:400px;
+        line-height:60px;
+        font-size:35px;
+    }
+
+    .projectInfo{
+        margin-bottom: 0px;
+    }
+
+    .projectInfo .main{
+        line-height:50px;
+        line-height:3.5vw;
+        font-size: 40px;
+        font-size: 3vw;
+    }
+
+    .projectInfo .title{
+        line-height:40px;
+        font-size:30px;
+    }
+
+    .timeframe{
+        margin-right:250px;
+    }
+
+    .mobileProject {
+        width: 500px;
+        border: 4px solid #000;
+        border-bottom:0;
+        border-radius: 50px 50px 0 0;
+        max-height: 800px;
+    }
+
+    .mobileProject .screen{
+        margin-top:100px;
+    }
+
 }
 
-@media(min-width: 2000px){
+@media(min-width: 2400px){
     /* Extra Large Screen size ***************************************************/
     /* XL */
     html{
@@ -1261,7 +1614,11 @@ section, section > div, .pagination, .pagination > div, section.whatProject, .fo
     p{
         min-width:1000px;
         min-width:60vw;
-        line-height:70px;
+        line-height:60px;
+        line-height:2.7vw;
+
+        font-size:40px;
+        font-size:2vw;
     }
 
     .pagination{
@@ -1303,20 +1660,20 @@ section, section > div, .pagination, .pagination > div, section.whatProject, .fo
         font-size:1.5vw;
         line-height:2vw;
     }
-}
 
-@media(min-height: 920px){
-    /* Tall Screen size ***********************************************************/
-    /* T */
-    .me .pageTitle, .contact .pageTitle{
-        margin-top:300px;
+    .projectInfo .title{
+        font-size:40px;
     }
-}
 
-@media(min-height: 1100px){
-    /* Extra Tall Screen size *****************************************************/
-    /* ET */
-    .me .pageTitle, .contact .pageTitle{
-        margin-top:400px;
+    .mobileProject {
+        width: 700px;
+        border: 4px solid #000;
+        border-bottom:0;
+        border-radius: 50px 50px 0 0;
+        max-height: 1000px;
+    }
+
+    .mobileProject .screen{
+        margin-top:100px;
     }
 }
