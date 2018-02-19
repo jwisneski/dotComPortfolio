@@ -482,7 +482,8 @@ a.toExternal{
 /* End Page Link overrides ******************/
 
 section, section > div, .pagination, .pagination > div, section.whatProject, .footer section,
-.projects > div, .close, .projectInfo, .projectInfo div, .mobileSection, .mobileContent{
+.projects > div, .close, .projectInfo, .projectInfo div, .mobileSection, .mobileContent,
+.channels{
     display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
     display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
     display: -ms-flexbox;      /* TWEENER - IE 10 */
@@ -717,7 +718,7 @@ section, section > div, .pagination, .pagination > div, section.whatProject, .fo
     width:100%;
     flex-direction:row;
     align-self:flex-start;
-    margin-top:50px;
+    margin-top:20px;
     margin-bottom:50px;
     flex-wrap:wrap;
     justify-content:flex-start;
@@ -754,6 +755,33 @@ section, section > div, .pagination, .pagination > div, section.whatProject, .fo
 
 .secondary span{ /*denotes an "and"*/
     font-weight:400;
+}
+
+.channels{
+    margin:0;
+    margin-top:30px;
+    margin-bottom:20px;
+    flex-direction:row;
+    align-items: center;
+    justify-content: center;
+}
+
+.channels.light{
+    fill:#fff;
+}
+
+.channels .mobileIcon svg, .channels .tabletIcon svg{
+    height:80px;
+    width:80px;
+    margin-right:-10px;
+}
+
+.channels .mobileIcon svg{
+    margin-right:-20px;
+}
+
+.channels .laptopIcon svg{
+    height:80px;
 }
 
 /* End how content overrides **************/
@@ -1061,8 +1089,9 @@ section, section > div, .pagination, .pagination > div, section.whatProject, .fo
 
 /*remove this when the photos are ready*/
 .leadWork, .indyWork{
-    height:50px !important;
+    height:30px !important;
     margin-bottom:0 !important;
+    background:transparent;
 }
 
 .indyWork, .portrait{
@@ -1153,9 +1182,18 @@ section, section > div, .pagination, .pagination > div, section.whatProject, .fo
 @media(max-height:560px) and (max-width:400px){
     /*extra small short screen iPhone 4 mostly*/
     /* XSS */
-    .me a, .contact a, .featured a, .sendoff a{
+    .me a, .contact a, .sendoff a{
         bottom:0;
         top:auto;
+    }
+
+    .featured a{
+        bottom:-50px;
+    }
+
+    .me h1, .me h2 {
+        margin:0;
+        padding-top:0;
     }
 }
 
@@ -1193,6 +1231,16 @@ section, section > div, .pagination, .pagination > div, section.whatProject, .fo
         line-height:5vw;
         font-size:16px;
         font-size:3vw;
+    }
+
+    .channels .mobileIcon svg, .channels .tabletIcon svg{
+        height:100px;
+        width:100px;
+        margin-right:0;
+    }
+
+    .channels .laptopIcon svg{
+        height:100px;
     }
 }
 
@@ -1320,6 +1368,10 @@ section, section > div, .pagination, .pagination > div, section.whatProject, .fo
         align-self:flex-start;
     }
 
+    .savings a{
+        bottom:-20;
+    }
+
     .miniBag a{
         border-color:#CB187C;
         background-color:#CB187C;
@@ -1407,6 +1459,7 @@ section, section > div, .pagination, .pagination > div, section.whatProject, .fo
 
     .leadWork{
         order:2;
+        height:50px !important;
     }
 
     .portrait{
@@ -1447,6 +1500,21 @@ section, section > div, .pagination, .pagination > div, section.whatProject, .fo
         font-size:3vw;
         line-height:30px;
         line-height:4vw;
+    }
+
+    .channels{
+        margin:0;
+        align-self:flex-start;
+        flex-direction:row;
+        justify-content: flex-start;
+    }
+
+    .channels .laptopIcon{
+        padding:10px;
+    }
+
+    .channels.light{
+        fill:#000;
     }
 }
 
@@ -1503,6 +1571,15 @@ section, section > div, .pagination, .pagination > div, section.whatProject, .fo
 
     .mobileProject{
         margin-right:50px;
+        width: 500px;
+        border: 4px solid #000;
+        border-bottom:0;
+        border-radius: 50px 50px 0 0;
+        max-height: 700px;
+    }
+
+    .mobileProject .screen{
+        margin-top:100px;
     }
 
     .projectInfo{
@@ -1540,7 +1617,6 @@ section, section > div, .pagination, .pagination > div, section.whatProject, .fo
         font-size: 30px;
         font-size: 2.5vw;
     }
-
 }
 
 @media(min-width:1620px){
@@ -1574,19 +1650,6 @@ section, section > div, .pagination, .pagination > div, section.whatProject, .fo
     .timeframe{
         margin-right:250px;
     }
-
-    .mobileProject {
-        width: 500px;
-        border: 4px solid #000;
-        border-bottom:0;
-        border-radius: 50px 50px 0 0;
-        max-height: 800px;
-    }
-
-    .mobileProject .screen{
-        margin-top:100px;
-    }
-
 }
 
 @media(min-width: 2400px){
